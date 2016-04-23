@@ -1,17 +1,17 @@
-#Agenda
+# Agenda
 
 Imane Nedjima Dahmani
 Li Deng
 Daniele Pitrolo
 Patrick Rivera
 
-##Description
+## Description
 
 L'application permet de créer et afficher un agenda.
 
-![](./agenda.png "")
+![Maquette agenda](agenda.png)
 
-###Caractéristiques
+### Caractéristiques
 
 * Possibilité de charger un agenda déjà créé
 * Possibilité d'ajouter un évènement
