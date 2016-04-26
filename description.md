@@ -27,3 +27,4 @@ L'application permet de créer et afficher un agenda.
 * Calcul du total des heures
     * des évènements selectionnés
     * d'un calendrier
+* Utilisateurs à prevenir
