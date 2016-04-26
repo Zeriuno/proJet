@@ -40,6 +40,7 @@ L'application permet de créer, modifier et afficher un agenda.
 * Un bouton pour créer un nouvel évènement
 * Un bouton pour créer un nouveau calendrier
 * Liste des calendriers créés avec case de sélection (afficher/cacher)
+* Chaque évènement a une case qui peut être cochée ou décochée
 
 #### Fonctionnement de l'interface:
 
