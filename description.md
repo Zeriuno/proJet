@@ -19,6 +19,7 @@ L'application permet de créer, modifier et afficher un agenda.
 * Différences dans l'affichage de chaque calendrier (couleur)
 * Possibilité de lier un calendrier à une adresse mail de contact
 * Possibilité d'ajouter un évènement
+* Possibilité de reporter un évènement
 * Composition d'un évènement
    * nom
    * lieu
@@ -38,6 +39,7 @@ L'application permet de créer, modifier et afficher un agenda.
       (* modalité du rappel : mail, SMS, popup...)
    (* Privé/Pro : évènement ou calendrier peuvent être privé ou professionnel: ne serait-il plutôt à l'utilisateur de créer un calendrier PRO ou Privé?)
    * Remarques pour l'évènement (voir la RFC de l'icalendar)
+   * Suivi(Estimation) pour l'évènement 
    * Pièce jointe (voir la RFC de l'icalendar)
 
 * Une personne associée à l'évènement
@@ -56,6 +58,9 @@ L'agenda peut stocker des tâches (classées dans des projets?).
   * nom de la tâche
   * échéance
   * Evènement associé
+  * charges totales de la tâche 
+  * charges par jour de la tâche
+  * suivi de la tâches
   * rappel
     * périodicité du rappel
     * modalité du rappel
