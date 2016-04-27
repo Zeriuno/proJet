@@ -17,7 +17,44 @@ L'application permet de créer, modifier et afficher un agenda.
 * Multi-utilisateur: au démarrage on demande avec quel utilisateur on veut accéder
 * Un agenda peut être composé de plusieurs calendriers
 * Différences dans l'affichage de chaque calendrier (couleur)
+* Possibilité de lier un calendrier à une adresse mail de contact
 * Possibilité d'ajouter un évènement
+* Possibilité d'ajouter des tâches
+* Composition d'un évènement
+   * nom
+   * lieu
+   * participants
+   * début
+   * fin
+   * durée (possibilité d'indiquer des journées entières)
+   * Répétitions de l'évènement
+      * Jamais
+      * Tous les jours
+      * Chaque mercredi ...
+      * Tous les mois
+      * Tous les ans
+      * Personnalisé
+      * fin de la répétition
+   * Calendrier local ou compte mail associé
+   * Calendrier associé à un compte mail
+   * Statut (occupé/libre)
+   * Rappel
+      * Début du rappel
+      * périodicité du rappel
+      * modalité du rappel
+   * Privé/Pro
+   * Notes
+   * Pièce jointe
+* Composition d'une Tâche
+  * nom de la tâche
+  * échéance
+  * Calendrier local ou compte mail associé
+  * Evènement associé
+  * rappel
+    * périodicité du rappel
+    * modalité du rappel
+  * pièce jointe
+* Rappel quotidien des tâches et évènements classé par échéance et priorité
 * Possibilité de modifier (supprimer) un évènement
 * Possibilité de sauvegarder l'agenda
 * Possibilité d'exporter (format ical, et [?])
