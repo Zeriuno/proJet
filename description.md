@@ -19,55 +19,57 @@ L'application permet de créer, modifier et afficher un agenda.
 * Différences dans l'affichage de chaque calendrier (couleur)
 * Possibilité de lier un calendrier à une adresse mail de contact
 * Possibilité d'ajouter un évènement
-* Possibilité d'ajouter des tâches
 * Composition d'un évènement
    * nom
    * lieu
    * participants
-   * début
-   * fin
-   * durée (possibilité d'indiquer des journées entières)
+   * début et fin (possibilité de couvrir plusieurs jours à étudier)
    * Répétitions de l'évènement
       * Jamais
-      * Tous les jours
-      * Chaque mercredi ...
+      * Tous les X jours
       * Tous les mois
       * Tous les ans
-      * Personnalisé
+      * (Personnalisé: "tous les premier Lundi du mois")
       * fin de la répétition
-   * Calendrier local ou compte mail associé
-   * Calendrier associé à un compte mail
    * Statut (occupé/libre)
    * Rappel
       * Début du rappel
       * périodicité du rappel
-      * modalité du rappel
-   * Privé/Pro
-   * Notes
-   * Pièce jointe
+      (* modalité du rappel : mail, SMS, popup...)
+   (* Privé/Pro : évènement ou calendrier peuvent être privé ou professionnel: ne serait-il plutôt à l'utilisateur de créer un calendrier PRO ou Privé?)
+   * Remarques pour l'évènement (voir la RFC de l'icalendar)
+   * Pièce jointe (voir la RFC de l'icalendar)
+
+* Une personne associée à l'évènement
+ * Fiche personne en vcard
+ * Avant de fermer la session le programme montre une liste des personnes à prévenir. Les personnes à prévenir sont celles présentes dans des évènements créés ou bien modifiés.
+* Calcul du total des heures
+  * des évènements selectionnés
+  * d'un calendrier
+
+### Tâches
+
+L'agenda peut stocker des tâches (classées dans des projets?).
+
+* Possibilité de créer une tâche
 * Composition d'une Tâche
   * nom de la tâche
   * échéance
-  * Calendrier local ou compte mail associé
   * Evènement associé
   * rappel
     * périodicité du rappel
     * modalité du rappel
   * pièce jointe
-* Rappel quotidien des tâches et évènements classé par échéance et priorité
-* Possibilité de modifier (supprimer) un évènement
-* Possibilité de sauvegarder l'agenda
-* Possibilité d'exporter (format ical, et [?])
-    * export de l'agenda
-    * export d'un calendier
-    * export d'un seul évènement (possibilité de permettre la sélection multiple)
+  * priorité (par note ou par classement global?)
+* Rappel quotidien des tâches et évènements classé par échéance
+* Possibilité de modifier (supprimer) une tâche
 
-* Une personne associée à l'évènement
-  * Fiche personne en vcard
-  * Avant de fermer la session le programme montre une liste des personnes à prévenir. Les personnes à prévenir sont celles présentes dans des évènements créés ou bien modifiés.
-* Calcul du total des heures
-    * des évènements selectionnés
-    * d'un calendrier
+### Export
+
+* Possibilité d'exporter (format ics pour les évènements, quel pour les tâches?)
+    * export de l'agenda
+    * export d'un (projet?)
+    * export d'une seule tâche (sélection multiple possible)
 
 ### Fonctionnement de l'interface graphique
 
