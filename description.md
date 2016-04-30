@@ -38,8 +38,9 @@ L'application permet de créer, modifier et afficher un agenda.
       * périodicité du rappel
       (* modalité du rappel : mail, SMS, popup...)
    (* Privé/Pro : évènement ou calendrier peuvent être privé ou professionnel: ne serait-il plutôt à l'utilisateur de créer un calendrier PRO ou Privé?)
+		OK Possibilité de définir un calendrier comme pro ou privé
    * Remarques pour l'évènement (voir la RFC de l'icalendar)
-   * Suivi(Estimation) pour l'évènement 
+   * Suivi(Estimation) pour l'évènement (Je ne vois pas à quoi correspond cette fonction, est-ce qu'il est possible de détailler?)
    * Pièce jointe (voir la RFC de l'icalendar)
 
 * Une personne associée à l'évènement
@@ -51,21 +52,21 @@ L'application permet de créer, modifier et afficher un agenda.
 
 ### Tâches
 
-L'agenda peut stocker des tâches (classées dans des projets?).
+L'agenda peut stocker des tâches (classées dans des projets?). (Doivent pouvoir être associé ou pas à un évènement/projet)
 
 * Possibilité de créer une tâche
 * Composition d'une Tâche
   * nom de la tâche
   * échéance
   * Evènement associé
-  * charges totales de la tâche 
-  * charges par jour de la tâche
-  * suivi de la tâches
+  * charges totales de la tâche (Je ne vois pas à quoi correspond cette fonction, est-ce qu'il est possible de détailler?) 
+  * charges par jour de la tâche (Pour moi une täche est à effectuer un jour donné. Si plusieurs jours ça ferait pluieurs tâche)
+  * suivi de la tâches (réalisé ou pas)
   * rappel
     * périodicité du rappel
     * modalité du rappel
   * pièce jointe
-  * priorité (par note ou par classement global?)
+  * priorité (par note ou par classement global?) plutôt par échéance
 * Rappel quotidien des tâches et évènements classé par échéance
 * Possibilité de modifier (supprimer) une tâche
 
