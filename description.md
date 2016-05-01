@@ -74,6 +74,16 @@ L'agenda peut stocker des tâches, classées dans des projets. (Doivent pouvoir 
     * export d'un projet
     * export d'une seule tâche (sélection multiple possible)
 
+### Base de données
+
+La base de données stocke
+
+* les utilisateurs
+* les calendriers
+* les évènements
+* les fiches de personnes
+* les tâches
+
 ### Fonctionnement de l'interface graphique
 
 #### Les éléments de l'interface:
