@@ -92,3 +92,28 @@ Evènement:
   * Un bouton permet de passer en mode *Modification*, un bouton permet de supprimer l'évènement
 * En sélectionnant l'évènement on peut en faire un copier-coller
 * En traînant les marges supérieures et inférieures de l'évènement on peut modifier son heure de début et de fin.
+
+
+### Prolongement
+
+Commentaire Daniele:
+Je vous propose de mettre ici des fonctionnalités qu'on croit possibles ou intéressantes, mais qui ne sont pas fondamentales. Nous pourrons soit:
+
+* les réaliser juste si nous en avons le temps
+* les passer dans le coeur du projet si cela est demandé par M. Boyer.
+
+* Envoi de courriels
+
+#### Fonctionnalité de suivi de projet
+
+Commentaire Daniele: Je trouve cette idée très intéressante, mais potentiellement très compliquée. Je voudrais avoir plus de détails sur comment on en envisage le fonctionnement. @GG89, est-ce que tu pourrais nous décrire l'utilisation (action de l'utilisateur, action de l'application) que tu imagines? Parce que je me dis que nous avons probablement tous les outils déjà en place avec les évènements et les tâches toutes simples.
+
+Si on adapte l'application à la gestion de projet, en plus des projets, nous pourrions avoir les processus, pour classer les tâches. Ou bien on peut envisager que l'on associe une tâche à un calendrier et on la classe, éventuellement, dans un processus.
+
+
+* charges totales de la tâche
+  (Commentaire Patrick: Je ne vois pas à quoi correspond cette fonction, est-ce qu'il est possible de détailler?)
+* charges par jour de la tâche
+  (Commentaire Patrick: Pour moi une täche est à effectuer un jour donné. Si plusieurs jours ça ferait pluieurs tâche)
+* suivi de la tâches (réalisé ou pas)
+  (Commentaire Daniele: Pour moi il n'y a pas de "suivi" si les choix sont "fait/pas fait", mais juste une case à cocher. Si l'on parle de suivi j'ai l'impression qu'on doit suivre l'évolution au jour le jour: 8 heures faites aujourd'hui, 2 hier...)
