@@ -67,11 +67,11 @@ L'agenda peut stocker des tâches, classées dans des projets. (Doivent pouvoir 
 * Rappel quotidien des tâches et évènements classé par échéance
 * Possibilité de modifier (supprimer) une tâche
 
-### Export
+#### Export
 
-* Possibilité d'exporter (format ics pour les évènements, quel pour les tâches?)
+* Possibilité d'exporter (format ics pour les évènements, RFC 5545)
     * export de l'agenda
-    * export d'un (projet?)
+    * export d'un projet
     * export d'une seule tâche (sélection multiple possible)
 
 ### Fonctionnement de l'interface graphique
