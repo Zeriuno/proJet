@@ -50,18 +50,15 @@ L'application permet de créer, modifier et afficher un agenda.
   * des évènements selectionnés
   * d'un calendrier
 
-### Tâches
+#### Tâches
 
-L'agenda peut stocker des tâches (classées dans des projets?). (Doivent pouvoir être associé ou pas à un évènement/projet)
+L'agenda peut stocker des tâches, classées dans des projets. (Doivent pouvoir être associé ou pas à un évènement/projet)
 
 * Possibilité de créer une tâche
-* Composition d'une Tâche
+* Composition d'une tâche
   * nom de la tâche
   * échéance
   * Evènement associé
-  * charges totales de la tâche (Je ne vois pas à quoi correspond cette fonction, est-ce qu'il est possible de détailler?) 
-  * charges par jour de la tâche (Pour moi une täche est à effectuer un jour donné. Si plusieurs jours ça ferait pluieurs tâche)
-  * suivi de la tâches (réalisé ou pas)
   * rappel
     * périodicité du rappel
     * modalité du rappel
