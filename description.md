@@ -122,15 +122,21 @@ Si on adapte l'application à la gestion de projet, en plus des projets, nous po
 
 
 * charges totales de la tâche
-  (Commentaire Patrick: Je ne vois pas à quoi correspond cette fonction, est-ce qu'il est possible de détailler?)
-On peux donner à  l'agenda un temps total pour réaliser le projet et le temps disponible pour chaque jour(ou le délai du projet).
-l'appli peux calculer le délai pour le projet (ou le temps nécessaire pour réaliser le proejt par jour).
-#encore une idée: on peux ajouter aussi la notion j/h . l'agenda peux prendre en compte les resources du projet (nombre de personne dispos) pour obtenir le délai / le temps nécessaire pour réaliser le proejt par jorus.
+
+  Commentaire Patrick: Je ne vois pas à quoi correspond cette fonction, est-ce qu'il est possible de détailler?
+
+  Commentiare Li: On peux donner à  l'agenda un temps total pour réaliser le projet et le temps disponible pour chaque jour(ou le délai du projet).
+  l'appli peux calculer le délai pour le projet (ou le temps nécessaire pour réaliser le proejt par jour).
+  encore une idée: on peux ajouter aussi la notion j/h . l'agenda peux prendre en compte les resources du projet (nombre de personne dispos) pour obtenir le délai / le temps nécessaire pour réaliser le proejt par jorus.
 * charges par jour de la tâche
-  (Commentaire Patrick: Pour moi une täche est à effectuer un jour donné. Si plusieurs jours ça ferait pluieurs tâche)
-Exemple : révieion de réseaux est comme un proejet dans l'agenda et on peux donner des tâches par jour. par ex: lundi-vendredi relire deux heurs cours pour chaque jours. semdi et dimanche, faire 3 heure des exos. 
-on a donc le porjet et les charges par jours. 
+
+  Commentaire Patrick: Pour moi une täche est à effectuer un jour donné. Si plusieurs jours ça ferait pluieurs tâche
+
+  Commentaire Li: Exemple : révieion de réseaux est comme un proejet dans l'agenda et on peux donner des tâches par jour. par ex: lundi-vendredi relire deux heurs cours pour chaque jours. semdi et dimanche, faire 3 heure des exos.
+  on a donc le porjet et les charges par jours.
 * suivi de la tâches (réalisé ou pas)
-  (Commentaire Daniele: Pour moi il n'y a pas de "suivi" si les choix sont "fait/pas fait", mais juste une case à cocher. Si l'on parle de suivi j'ai l'impression qu'on doit suivre l'évolution au jour le jour: 8 heures faites aujourd'hui, 2 hier...)
-Oui je pense qu'on peux laisser l'utilisateur estimer la réalisation du taches de chaque jours par %. 100% = fait 0% = non fait.
-Selon le pourcetage de chaque jours. l'application peut calculer la réalisation total du projet.
+
+  Commentaire Daniele: Pour moi il n'y a pas de "suivi" si les choix sont "fait/pas fait", mais juste une case à cocher. Si l'on parle de suivi j'ai l'impression qu'on doit suivre l'évolution au jour le jour: 8 heures faites aujourd'hui, 2 hier...)
+
+  Commentaire Li: Oui je pense qu'on peux laisser l'utilisateur estimer la réalisation du taches de chaque jours par %. 100% = fait 0% = non fait.
+  Selon le pourcetage de chaque jours. l'application peut calculer la réalisation total du projet.
