@@ -131,6 +131,8 @@ Si on adapte l'application à la gestion de projet, en plus des projets, nous po
 
   Commentaire Daniele: Je suis contre. C'est intéressant, mais ça nous amène trop loin, à mon avis. Il faudrait créer la notion d'équipe (nombre de personnes disponibles), avec un taux de disponibilité pour chacun. À chaque création d'évènement pour une personne de l'équipe se crée le bordel dans le planning (il est occupé, il a 2h de moins, tout est décalé…). Tout ça me semble difficile à tenir dans le cadre de la création de l'application: on a déjà un effort de conception assez grand.
 
+  Commentaire Patrick: Je suis plutôt favorable à des tâches simples, au moins dans un premier temps. Sinon ça risque de partir vers une application de gestion de projet plutôt qu'un agenda.
+  
 * charges par jour de la tâche
 
   Commentaire Patrick: Pour moi une täche est à effectuer un jour donné. Si plusieurs jours ça ferait pluieurs tâche.
@@ -149,6 +151,7 @@ Si on adapte l'application à la gestion de projet, en plus des projets, nous po
   * Possibilité d'associer à un évènement une tâche. La durée effectuée de la tâche changera donc en incrémentant de la durée de l'évènement. Si plusieurs tâches sont assignées à un évènement, elles auront une incrémentation  de durée effectuée égale à la durée de l'évènement / n. de tâches.
   * L'utilisateur peut manuellement changer la durée effectuée totale ainsi qu'incrémenter manuellement la durée effectuée.
 
+  Patrick : OK pour moi
 
 * suivi de la tâches (réalisé ou pas)
 
@@ -158,3 +161,5 @@ Si on adapte l'application à la gestion de projet, en plus des projets, nous po
   Selon le pourcetage de chaque jours. l'application peut calculer la réalisation total du projet.
 
   Commentaire Daniele: je suis contre un suivi, je crois que la tâche doit être "faite/à faire" et rien d'autre.
+
+  Patrick : Pareil
