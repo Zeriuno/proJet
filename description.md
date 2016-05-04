@@ -1,9 +1,10 @@
 # Agenda
 
-Imane Nedjima Dahmani
-Li Deng
-Daniele Pitrolo
-Patrick Rivera
+Équipe projet:
+* Imane Nedjima Dahmani
+* Li Deng
+* Daniele Pitrolo
+* Patrick Rivera
 
 ## Description
 
