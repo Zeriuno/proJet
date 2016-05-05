@@ -23,8 +23,13 @@ mot de passe (?)
   nomEvenement
   heureDebut //au format AAAA-MM-DD-HH-MM-SS
   heureFin //idem
+  repetitionEvenement
   remarquesEvenement
   pjEvenement
+  statut
+  rappelEvenement
+
+
 
   tâche
 +-------+
