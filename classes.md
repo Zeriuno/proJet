@@ -38,3 +38,11 @@ mot de passe (?)
   //dureeEstimee
   //dureeEffectuee
   pjTache
+
+   personnes
+ +-----------+
+ *idPersonne
+ prenomPersonne
+ nomPersonne
+ melPersonne
+ telPersonne
