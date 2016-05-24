@@ -6,7 +6,16 @@ Un propriétaire pour le calendrier? Cela supposerait qu'il y a un propriétaire
 nomUtilisateur
 //il faut ajouter  numéro téléphone,email, adresse postale etc - Li
 //non, là c'est juste un utilisateur, pas un contact (cf personnes) - Daniele
-mot de passe (?)
+motDePasse (?)
+
+utilisateur 1 --- a --- 0,* melContact
+
+ melUtilisateur
++------------------+
+ adresseMel
+ motDePasseMel
+ //Mel = Méssagerie électronique (mail, en somme, mais en français) - Daniele
+ //Cetet classe nous sert pour envoyer les alertes depuis l'adresse de l'utilisateur.
 
 utilisateurs 1, 1 --- ont --- 1,1 agenda
 //un contact/participant peut être utilisé dans pluiseurs agendas ? - Li
@@ -15,7 +24,7 @@ utilisateurs 1, 1 --- ont --- 1,1 agenda
   agenda
 +-----------+
  *idAgenda
- nomAgenda
+ ~~nomAgenda~~ //pas nécessaire: l'agenda n'a pas un nom que l'on puisse choisir
 
 agenda 1,1 --- contient --- 1,* calendrier
 //on va commencer simple: on ne partage pas les calendriers. Un utilisateur peut l'exporter et un autre l'importer, mais ce ne sera pas le partage du même calendrier - Daniele
@@ -24,11 +33,7 @@ agenda 1,1 --- contient --- 1,* calendrier
  +----------+
  *idCalendrier
  nomCalendrier
- adresseMel
- motDePasseMel
- //Mel = Méssagerie électronique (mail, en somme, mais en français) - Daniele
  
-
 calendrier 1,* --- se compose --- 0,* evenement
 
   evenement
@@ -42,7 +47,8 @@ calendrier 1,* --- se compose --- 0,* evenement
   pjEvenement// pièce jointe
   statut //true: libre; false: occupé
   rappelEvenement
-  contactsEvenement
+  
+  //Comment on intègre les participants à un évènement? Je me demande si cela peut même être une classe à part. Car on a besoin des contacts mais aussi du statut "prévenu ou pas".
   
 
 calendrier 1,* --- prévoit --- 0,* tache
