@@ -24,6 +24,7 @@ public class Evenement {
 		System.out.println("Saisir le contenu :");
 	    String str = sc.nextLine(); 
 	    this.textEven=str;
+	    sc.close();
 		return textEven;		
 	}
 	
