@@ -1,7 +1,7 @@
 # Vendredi
 
 
-CDC élagué
+~~CDC élagué~~
 Schema BDD
 
 UML
