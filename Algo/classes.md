@@ -33,7 +33,7 @@ agenda 1,1 --- contient --- 1,* calendrier
  +----------+
  *idCalendrier
  nomCalendrier
- 
+
 calendrier 1,* --- se compose --- 0,* evenement
 
   evenement
@@ -47,9 +47,9 @@ calendrier 1,* --- se compose --- 0,* evenement
   pjEvenement// pièce jointe
   statut //true: libre; false: occupé
   rappelEvenement
-  
+
   //Comment on intègre les participants à un évènement? Je me demande si cela peut même être une classe à part. Car on a besoin des contacts mais aussi du statut "prévenu ou pas".
-  
+
 
 calendrier 1,* --- prévoit --- 0,* tache
 evenement 0,* --- inclut --- 0,* tache
