@@ -44,36 +44,36 @@ L'application permet de créer, modifier et afficher un agenda.
    * Pièce jointe (cf. RFC 5545)
 
 * Une ou plusieurs personnes peuvent être associées à l'évènement
- * Fiche personne en vcard
+  Fiche personne en vcard
  * Avant de fermer la session le programme montre une liste des personnes à prévenir. Les personnes à prévenir sont celles présentes dans des évènements créés ou bien modifiés.
-* Calcul du total des heures
-  * des évènements selectionnés
-  * d'un calendrier
+~~* Calcul du total des heures~~
+  ~~* des évènements selectionnés~~
+  ~~* d'un calendrier~~
 
-#### Tâches
+~~#### Tâches~~
 
-L'agenda peut stocker des tâches, classées dans des calendriers.
+~~L'agenda peut stocker des tâches, classées dans des calendriers.~~
 
-* Possibilité de créer une tâche
-* Composition d'une tâche
-  * nom de la tâche
-  * échéance
-  * Evènement associé
-  * rappel
-    * périodicité du rappel
-    * modalité du rappel
-  * pièce jointe
-  * priorité
-* Rappel quotidien des tâches et évènements classé par échéance
-* Possibilité de modifier et supprimer une tâche
-* Possibilité d'affecter une tâche à un évènement
+~~* Possibilité de créer une tâche~~
+~~* Composition d'une tâche~~
+  ~~* nom de la tâche~~
+  ~~* échéance~~
+  ~~* Evènement associé~~
+  ~~* rappel~~
+    ~~* périodicité du rappel~~
+    ~~* modalité du rappel~~
+  ~~* pièce jointe~~
+  ~~* priorité~~
+~~* Rappel quotidien des tâches et évènements classé par échéance~~
+~~* Possibilité de modifier et supprimer une tâche~~
+~~* Possibilité d'affecter une tâche à un évènement~~
 
-#### Export
+~~#### Export~~
 
-* Possibilité d'exporter dans différents formats
-    * export de l'agenda
-    * export d'un projet
-    * export d'un seul évènement ou tâche (sélection multiple possible)
+~~* Possibilité d'exporter dans différents formats~~
+  ~~* export de l'agenda~~
+  ~~* export d'un projet~~
+  ~~* export d'un seul évènement ou tâche (sélection multiple possible)~~
 
 ### Base de données
 
@@ -83,7 +83,7 @@ La base de données stocke
 * les calendriers
 * les évènements
 * les fiches de personnes
-* les tâches
+~~* les tâches~~
 
 ### Fonctionnement de l'interface graphique
 
@@ -93,7 +93,7 @@ La base de données stocke
 * Un bouton pour créer un nouvel évènement
 * Un bouton pour créer un nouveau calendrier
 * Liste des calendriers créés avec case de sélection (afficher/cacher)
-* Chaque évènement a une case qui peut être cochée ou décochée
+~~* Chaque évènement a une case qui peut être cochée ou décochée~~
 
 #### Fonctionnement de l'interface:
 
