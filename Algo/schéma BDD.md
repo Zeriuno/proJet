@@ -1,0 +1,6 @@
+personne(#idPers, nomPers, prenomPers, mailPers, telPers)
+utilisateur(#idUtil, logiUtil, mdpUtil, idPers*)
+calendrier(#idCal, nomCal, idUtil*)
+evenement(#idEven, nomEven, hDebEven, hFinEven, repEven, finRepEven, remarqueEven, idCal*)
+persEven(#(idPers*, idEven*), etatPersEven)
+pJ(#idPJ, nomPJ, idEven*)
