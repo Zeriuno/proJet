@@ -2,7 +2,7 @@
 
 
 ~~CDC élagué~~
-Schema BDD
+~~Schema BDD~~
 
 UML
   Interface (https://openclassrooms.com/courses/apprenez-a-programmer-en-java/notre-premiere-fenetre)
