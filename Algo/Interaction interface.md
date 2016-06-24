@@ -3,13 +3,14 @@
 Écran de démarrage
 
   * Cases pour la saisie
-  * Vérification couple identification
+  * Bouton vérification
   * Ajout utilisateur
 
 Écran création d'utilisateur
 
   * Cases pour la saisie
   * Bouton de sauvegarde
+  * Bouton abandon
 
 Lancement interface calendrier
 
