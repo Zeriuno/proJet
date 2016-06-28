@@ -1,4 +1,6 @@
-# Application pour Lundi
+# Application pour Samedi 9 Juillet
+
+RDV Samedi 9 Juillet, 11h, Croc Fac, rue Saint-Jacques.
 
 * Lancer l'application
 * Fenêtre avec liste d'évènements (évènement peut être juste une chaîne de caractères)
