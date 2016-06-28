@@ -8,7 +8,3 @@ RDV Samedi 9 Juillet, 11h, Croc Fac, rue Saint-Jacques.
 * Double clic sur l'évènement pour le modifier (méthode mod)
   * Bouton "OK" pour sauvegarder
   * En cliquant sur "OK" l'évènement est sauvegardé dans la BDD
-
-* Application
-* Li
-* Déménagement
