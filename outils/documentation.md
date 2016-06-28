@@ -2,6 +2,9 @@
 
 ## GUI
 
+* Visual Guide to Layout Managers https://docs.oracle.com/javase/tutorial/uiswing/layout/visual.html
+* Text components (champs de saisie) https://docs.oracle.com/javase/tutorial/uiswing/components/generaltext.html
+
 ## BDD
 
 * Connexion a une BDD https://www.youtube.com/watch?v=54mszeznwtc
