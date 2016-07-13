@@ -23,12 +23,6 @@ L'application permet de créer, modifier et afficher un agenda.
    * lieu
    * participants
    * début et fin (possibilité de couvrir plusieurs jours à étudier)
-   * Répétitions de l'évènement
-      * Jamais
-      * Tous les X jours
-      * Tous les mois
-      * Tous les ans
-      * fin de la répétition
    * Remarques pour l'évènement (cf. RFC 5545)
 
 * Une ou plusieurs personnes peuvent être associées à l'évènement (Fiche personne en vcard)
