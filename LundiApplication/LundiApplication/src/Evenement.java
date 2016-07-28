@@ -11,9 +11,9 @@ public class Evenement {
 	String nomEven  ;
 	String idEven   ;
 	Arraylist <Personne> participants =  new Arraylist();
-	
-	
-	//constructeur 
+
+
+	//constructeur
 	public Evenement( String nomEven ) {
 		this.nomEven = nomEven;
 	}
@@ -25,21 +25,23 @@ public class Evenement {
 
 
 	}
-	// méthode
+	// mÃ©thode
+	/*
 	public String setText(){
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Saisir le contenu :");
-	    String str = sc.nextLine(); 
+	    String str = sc.nextLine();
 	    this.textEven=str;
-		return textEven;		
+		return textEven;
+		*/
 	}
-	
 
-	
+
+
 	public String toString(){
 	    return idEven + " - " + nomEven+": "+textEven;
    }
-	
-	
-	
+
+
+
 }
