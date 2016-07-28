@@ -1,15 +1,15 @@
-import java.util.Scanner;
-import java.util.ArrayList;
+import java.util.ArrayList ;
+import java.util.UUID      ;
 
 
 public class Evenement {
-	
+
 	Bdmanager robot=new Bdmanager();
-    
-	//attributs 
-	String textEven;
-	String nomEven;
-	int idEven;
+
+	//attributs
+	String textEven ;
+	String nomEven  ;
+	String idEven   ;
 	Arraylist <Personne> participants =  new Arraylist();
 	
 	
@@ -18,11 +18,12 @@ public class Evenement {
 		this.nomEven = nomEven;
 	}
 	public Evenement( String nomEven, String textEven ) {
-		this.textEven = textEven;
-		this.nomEven=nomEven;
-		robot.ajoutEven(nomEven, textEven);
-		
-		
+		this.textEven = textEven    ;
+		this.nomEven=nomEven        ;
+		this.idEven = UUID.random() ;
+		robot.ajoutEven(idEven, nomEven, textEven);
+
+
 	}
 	// méthode
 	public String setText(){
