@@ -4,19 +4,14 @@ public class test {
 	public static void main(String[] args) {
 		 
 		Bdmanager robot=new Bdmanager();
-		//Evenement wtf = new Evenement("tot","shit");
-		Evenement m= new Evenement("lol", "lala");
-//		m.setText();	 
-		System.out.println(m.toString());
-		System.out.println(m.idEven);
 		
-		Evenement n= new Evenement("lol", "lala");
-//		m.setText();	 
-		System.out.println(n.toString());
-		System.out.println(n.idEven);
-		robot.extraEven();
+		//Personne m= new Personne("P", "Daniele","@gmail");
+		//Personne n= new Personne("D", "Li","@gamil");
+ 
+		robot.extraPers();
 		
-		robot.modifEven(2, "textEven", "ce weekend");
+		robot.modifPers("@yolo", "mailPers", "@yoyo");
+		robot.extraPers();
 		
 //		Evenement n= new Evenement("lo", "lililili");
 //		n.setText();	 

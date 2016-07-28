@@ -1,9 +1,5 @@
 import java.util.Scanner;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
+import java.util.ArrayList;
 
 
 public class Evenement {
@@ -14,6 +10,7 @@ public class Evenement {
 	String textEven;
 	String nomEven;
 	int idEven;
+	Arraylist <Personne> participants =  new Arraylist();
 	
 	
 	//constructeur 
