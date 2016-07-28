@@ -7,38 +7,37 @@ import java.sql.Statement;
 
 public class Bdmanager {
 
-		
+
 	public Bdmanager() {
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	//fonction ajoutEven
 	public static void ajoutEven(String nomEven, String textEven ){
-		  
+
 		String url = "jdbc:mysql://localhost/java";
 		String login="root";
 		String passwd="";
 		Connection cn=null;
 		Statement st=null;
-		
+
 		try {
 
 			// Etape 1 : Chargement du driver
 			Class.forName("com.mysql.jdbc.Driver");
 
-			// Etape 2 : récupération de la connexion
+			// Etape 2 : rÃ©cupÃ©ration de la connexion
 			cn = DriverManager.getConnection(url, login, passwd);
 
-			// Etape 3 : Création d'un statement
+			// Etape 3 : CrÃ©ation d'un statement
 			st = cn.createStatement();
 
-			String sql = "INSERT INTO `evenement` (`nomEven`,`textEven`) VALUES ('"
-					+ nomEven + "','" + textEven +"')";
+			String sql = "INSERT INTO `evenement` (`idEven`, `nomEven`,`textEven`) VALUES ('" + idEven + "', '"	+ nomEven + "','" + textEven +"')";
 
-			// Etape 4 : exécution requête
+			// Etape 4 : exÃ©cution requÃªte
 			st.executeUpdate(sql);
 
-			// Si récup données alors étapes 5 (parcours Resultset)
+			// Si rÃ©cup donnÃ©es alors Ã©tapes 5 (parcours Resultset)
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -47,7 +46,7 @@ public class Bdmanager {
 			e.printStackTrace();
 		} finally {
 			try {
-			// Etape 6 : libérer ressources de la mémoire.
+			// Etape 6 : libÃ©rer ressources de la mÃ©moire.
 				cn.close();
 				st.close();
 			} catch (SQLException e) {
@@ -56,41 +55,41 @@ public class Bdmanager {
 		}
 	  }
 
-	
+
 	public static void extraEven() {
 
-		// Information d'accès à la base de données
+		// Information d'accÃ¨s Ã  la base de donnÃ©es
 		String url = "jdbc:mysql://localhost/java";
-		String login = "root";
-		String passwd = "";
-		Connection cn =null;
-		Statement st =null;
-		ResultSet rs =null;
-		
+		String login = "root" ;
+		String passwd = ""    ;
+		Connection cn =null   ;
+		Statement st =null    ;
+		ResultSet rs =null    ;
+
 		try {
 
 			// Etape 1 : Chargement du driver
 			Class.forName("com.mysql.jdbc.Driver");
 
-			// Etape 2 : récupération de la connexion
+			// Etape 2 : rï¿½cupï¿½ration de la connexion
 			cn = DriverManager.getConnection(url, login, passwd);
 
-			// Etape 3 : Création d'un statement
+			// Etape 3 : Crï¿½ation d'un statement
 			st = cn.createStatement();
 
 			String sql = "SELECT * FROM evenement";
 
-			// Etape 4 : exécution requête
+			// Etape 4 : exï¿½cution requï¿½te
 			rs = st.executeQuery(sql);
 
-			// Si récup données alors étapes 5 (parcours Resultset)
+			// Si rï¿½cup donnï¿½es alors ï¿½tapes 5 (parcours Resultset)
 
 			while (rs.next()) {
-				System.out.print(rs.getInt("idEven"));
+				System.out.print(rs.getString("idEven"));
 				System.out.print(rs.getString("nomEven"));
 				System.out.println(rs.getString("textEven"));
-				
-				
+
+
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -98,7 +97,7 @@ public class Bdmanager {
 			e.printStackTrace();
 		} finally {
 			try {
-			// Etape 6 : libérer ressources de la mémoire.
+			// Etape 6 : libï¿½rer ressources de la mï¿½moire.
 				cn.close();
 				st.close();
 			} catch (SQLException e) {
@@ -107,34 +106,34 @@ public class Bdmanager {
 		}
 	}
 
-//modification 
-	
-	public static void modifEven(int idEven, String colonne, String qch ){
-		  
+//modification
+
+	public static void modifEven(String idEven, String colonne, String qch ){
+
 		String url = "jdbc:mysql://localhost/java";
 		String login="root";
 		String passwd="";
 		Connection cn=null;
 		Statement st=null;
-		
+
 		try {
 
 			// Etape 1 : Chargement du driver
 			Class.forName("com.mysql.jdbc.Driver");
 
-			// Etape 2 : récupération de la connexion
+			// Etape 2 : rï¿½cupï¿½ration de la connexion
 			cn = DriverManager.getConnection(url, login, passwd);
 
-			// Etape 3 : Création d'un statement
+			// Etape 3 : Crï¿½ation d'un statement
 			st = cn.createStatement();
 
 			String sql = "UPDATE evenement SET "
 					+ colonne + "='" + qch +"'WHERE idEven = "+idEven+"";
 
-			// Etape 4 : exécution requête
+			// Etape 4 : exï¿½cution requï¿½te
 			st.executeUpdate(sql);
 
-			// Si récup données alors étapes 5 (parcours Resultset)
+			// Si rï¿½cup donnï¿½es alors ï¿½tapes 5 (parcours Resultset)
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -143,8 +142,8 @@ public class Bdmanager {
 			e.printStackTrace();
 		} finally {
 			try {
-				
-			// Etape 6 : libérer ressources de la mémoire.
+
+			// Etape 6 : libï¿½rer ressources de la mï¿½moire.
 				cn.close();
 				st.close();
 			} catch (SQLException e) {
@@ -152,36 +151,36 @@ public class Bdmanager {
 			}
 		}
 	  }
-	
-	
+
+
 	//++++++++++++++++++ Personne+++++++++++++++++++++//
 	//fonction ajoutPers
 		public static void ajoutPers(String nomPers, String prenomPers,String mailPers){
-			  
+
 			String url = "jdbc:mysql://localhost/java";
 			String login="root";
 			String passwd="";
 			Connection cn=null;
 			Statement st=null;
-			
+
 			try {
 
 				// Etape 1 : Chargement du driver
 				Class.forName("com.mysql.jdbc.Driver");
 
-				// Etape 2 : récupération de la connexion
+				// Etape 2 : rï¿½cupï¿½ration de la connexion
 				cn = DriverManager.getConnection(url, login, passwd);
 
-				// Etape 3 : Création d'un statement
+				// Etape 3 : Crï¿½ation d'un statement
 				st = cn.createStatement();
 
 				String sql = "INSERT INTO `personne` (`nomPers`,`prenomPers`,`mailPers`) VALUES ('"
 						+ nomPers + "','" + prenomPers +"','" + mailPers +"')";
 
-				// Etape 4 : exécution requête
+				// Etape 4 : exï¿½cution requï¿½te
 				st.executeUpdate(sql);
 
-				// Si récup données alors étapes 5 (parcours Resultset)
+				// Si rï¿½cup donnï¿½es alors ï¿½tapes 5 (parcours Resultset)
 
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -190,7 +189,7 @@ public class Bdmanager {
 				e.printStackTrace();
 			} finally {
 				try {
-				// Etape 6 : libérer ressources de la mémoire.
+				// Etape 6 : libï¿½rer ressources de la mï¿½moire.
 					cn.close();
 					st.close();
 				} catch (SQLException e) {
@@ -201,38 +200,38 @@ public class Bdmanager {
 	//fonction affichage
 		public static void extraPers() {
 
-			// Information d'accès à la base de données
+			// Information d'accï¿½s ï¿½ la base de donnï¿½es
 			String url = "jdbc:mysql://localhost/java";
 			String login = "root";
 			String passwd = "";
 			Connection cn =null;
 			Statement st =null;
 			ResultSet rs =null;
-			
+
 			try {
 
 				// Etape 1 : Chargement du driver
 				Class.forName("com.mysql.jdbc.Driver");
 
-				// Etape 2 : récupération de la connexion
+				// Etape 2 : rï¿½cupï¿½ration de la connexion
 				cn = DriverManager.getConnection(url, login, passwd);
 
-				// Etape 3 : Création d'un statement
+				// Etape 3 : Crï¿½ation d'un statement
 				st = cn.createStatement();
 
 				String sql = "SELECT * FROM personne";
 
-				// Etape 4 : exécution requête
+				// Etape 4 : exï¿½cution requï¿½te
 				rs = st.executeQuery(sql);
 
-				// Si récup données alors étapes 5 (parcours Resultset)
+				// Si rï¿½cup donnï¿½es alors ï¿½tapes 5 (parcours Resultset)
 
 				while (rs.next()) {
 					System.out.print(rs.getString("nomPers"));
 					System.out.print(rs.getString("prenomPers"));
 					System.out.println(rs.getString("mailPers"));
-					
-					
+
+
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -240,7 +239,7 @@ public class Bdmanager {
 				e.printStackTrace();
 			} finally {
 				try {
-				// Etape 6 : libérer ressources de la mémoire.
+				// Etape 6 : libï¿½rer ressources de la mï¿½moire.
 					cn.close();
 					st.close();
 				} catch (SQLException e) {
@@ -248,34 +247,34 @@ public class Bdmanager {
 				}
 			}
 		}
-		//modification 
-		
+		//modification
+
 		public static void modifPers(String mailPers, String colonne, String qch ){
-			  
+
 			String url = "jdbc:mysql://localhost/java";
 			String login="root";
 			String passwd="";
 			Connection cn=null;
 			Statement st=null;
-			
+
 			try {
 
 				// Etape 1 : Chargement du driver
 				Class.forName("com.mysql.jdbc.Driver");
 
-				// Etape 2 : récupération de la connexion
+				// Etape 2 : rï¿½cupï¿½ration de la connexion
 				cn = DriverManager.getConnection(url, login, passwd);
 
-				// Etape 3 : Création d'un statement
+				// Etape 3 : Crï¿½ation d'un statement
 				st = cn.createStatement();
 
 				String sql = "UPDATE personne SET "
 						+ colonne + "='" + qch +"'WHERE mailPers = '"+mailPers+"'";
 
-				// Etape 4 : exécution requête
+				// Etape 4 : exï¿½cution requï¿½te
 				st.executeUpdate(sql);
 
-				// Si récup données alors étapes 5 (parcours Resultset)
+				// Si rï¿½cup donnï¿½es alors ï¿½tapes 5 (parcours Resultset)
 
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -284,8 +283,8 @@ public class Bdmanager {
 				e.printStackTrace();
 			} finally {
 				try {
-					
-				// Etape 6 : libérer ressources de la mémoire.
+
+				// Etape 6 : libï¿½rer ressources de la mï¿½moire.
 					cn.close();
 					st.close();
 				} catch (SQLException e) {
@@ -296,34 +295,34 @@ public class Bdmanager {
 
 //++++++++++++++++++++++ Invitation +++++++++++++++++++++
 
-		
+
 		//fonction ajoutPers
 				public static void ajoutInvitation(String mailPers, int idEven){
-					  
+
 					String url = "jdbc:mysql://localhost/java";
 					String login="root";
 					String passwd="";
 					Connection cn=null;
 					Statement st=null;
-					
+
 					try {
 
 						// Etape 1 : Chargement du driver
 						Class.forName("com.mysql.jdbc.Driver");
 
-						// Etape 2 : récupération de la connexion
+						// Etape 2 : rï¿½cupï¿½ration de la connexion
 						cn = DriverManager.getConnection(url, login, passwd);
 
-						// Etape 3 : Création d'un statement
+						// Etape 3 : Crï¿½ation d'un statement
 						st = cn.createStatement();
 
 						String sql = "INSERT INTO `invitation` (`mailPers`,`idEven`) VALUES ('"
 								+ mailPers + "','" + idEven +"')";
 
-						// Etape 4 : exécution requête
+						// Etape 4 : exï¿½cution requï¿½te
 						st.executeUpdate(sql);
 
-						// Si récup données alors étapes 5 (parcours Resultset)
+						// Si rï¿½cup donnï¿½es alors ï¿½tapes 5 (parcours Resultset)
 
 					} catch (SQLException e) {
 						e.printStackTrace();
@@ -332,7 +331,7 @@ public class Bdmanager {
 						e.printStackTrace();
 					} finally {
 						try {
-						// Etape 6 : libérer ressources de la mémoire.
+						// Etape 6 : libï¿½rer ressources de la mï¿½moire.
 							cn.close();
 							st.close();
 						} catch (SQLException e) {
@@ -340,5 +339,5 @@ public class Bdmanager {
 						}
 					}
 				  }
-	
+
 }
