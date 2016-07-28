@@ -36,8 +36,10 @@ public class Evenement {
 		return textEven;		
 	}
 	
+
+	
 	public String toString(){
-	    return nomEven+": "+textEven;
+	    return idEven + " - " + nomEven+": "+textEven;
    }
 	
 	
