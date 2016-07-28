@@ -15,7 +15,6 @@ L'application permet de créer, modifier et afficher un agenda.
 
 ### Caractéristiques
 
-* Multi-utilisateur: au démarrage on demande avec quel utilisateur on veut accéder
 * Possibilité d'ajouter un évènement
 * Possibilité de modifier un évènement
 * Composition d'un évènement
