@@ -1,21 +1,21 @@
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 
-public class ConnexionJM {
-	
-	public static void main(String[] args) {
-		sauverEnBase("Sorbonne","avec dupont");
-		lireEnBase();
+public class Bdmanager {
+
+		
+	public Bdmanager() {
+		// TODO Auto-generated constructor stub
 	}
 	
-	
-	public static void sauverEnBase(String nomEven, String textEven ){
-	  
-		String url = "jdbc:mysql://localhost/formation";
+	//fonction ajoutEven
+	public static void ajoutEven(String nomEven, String textEven ){
+		  
+		String url = "jdbc:mysql://localhost/java";
 		String login="root";
 		String passwd="";
 		Connection cn=null;
@@ -32,7 +32,7 @@ public class ConnexionJM {
 			// Etape 3 : Création d'un statement
 			st = cn.createStatement();
 
-			String sql = "INSERT INTO `javadb` (`nomEven`,`textEven`) VALUES ('"
+			String sql = "INSERT INTO `evenement` (`nomEven`,`textEven`) VALUES ('"
 					+ nomEven + "','" + textEven +"')";
 
 			// Etape 4 : exécution requête
@@ -55,12 +55,14 @@ public class ConnexionJM {
 			}
 		}
 	  }
-	public static void lireEnBase() {
+
+	
+	public static void extraEven() {
 
 		// Information d'accès à la base de données
-		String url = "jdbc:mysql://localhost/formation";
-		String login = "root";
-		String passwd = "";
+		String url = "jdbc:mysql://localhost/java";
+		String login = "java";
+		String passwd = "java";
 		Connection cn =null;
 		Statement st =null;
 		ResultSet rs =null;
@@ -76,7 +78,7 @@ public class ConnexionJM {
 			// Etape 3 : Création d'un statement
 			st = cn.createStatement();
 
-			String sql = "SELECT * FROM javadb";
+			String sql = "SELECT * FROM evenement";
 
 			// Etape 4 : exécution requête
 			rs = st.executeQuery(sql);
@@ -103,4 +105,6 @@ public class ConnexionJM {
 			}
 		}
 	}
-	}	
+	
+	
+}
