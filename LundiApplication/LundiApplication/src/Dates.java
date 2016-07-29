@@ -17,7 +17,7 @@ public class Dates {
 
 	  public static void main(String[] a)
 	  {
-	    new Dates().cetteSemaine();
+	    new Dates().semaineAvant();
 	  }
 
 	  Dates()
@@ -25,13 +25,13 @@ public class Dates {
 		  maintenant = new Date(); //La date est initialisée à maintenant, car au lancement du programme on a besoin de ça.
 	  }
 //	    System.out.println(calendar.get(Calendar.DATE) + "/" + (calendar.get(Calendar.MONTH)+1)); //Imprimer jour et mois courants
-	  public void cetteSemaine() {
-
+	  public void cetteSemaine()
+	  {
 		calendar.setTime(maintenant);
 		
 	    //Comme ça on imprime les jours du mois pour une semaine
 	    int i = 3 ;
-		calendar.set(Calendar.DAY_OF_WEEK, i); //On récupère le Lundi de la semaine en cours.
+		calendar.set(Calendar.DAY_OF_WEEK, i)      ; //On récupère le Lundi de la semaine en cours.
 	    int Lundi = calendar.get(Calendar.DATE)    ;
 	    calendar.set(Calendar.DAY_OF_WEEK, i++)    ;
 	    int Mardi = calendar.get(Calendar.DATE)    ;
@@ -45,7 +45,23 @@ public class Dates {
 	    int Samedi = calendar.get(Calendar.DATE)   ;
 	    calendar.set(Calendar.DAY_OF_WEEK, i++)    ;
 	    int Dimanche = calendar.get(Calendar.DATE) ;
-
+	  }
+	  
+	  public void semainePro()
+	  {
+		calendar.setTime(maintenant)           ;
+		calendar.set(Calendar.DAY_OF_WEEK, 2)  ;
+		calendar.add(Calendar.DAY_OF_MONTH, 7) ;
+	  }
+	  
+	  public void semaineAvant()
+	  {
+		  calendar.setTime(maintenant)            ;
+		  calendar.set(Calendar.DAY_OF_WEEK, 2)   ;
+	      calendar.add(Calendar.DAY_OF_MONTH, -7) ;
+	      System.out.println(calendar.get(Calendar.DATE) + "/" + (calendar.get(Calendar.MONTH)+1)); //Imprimer jour et mois courants
+	  }
+	    
 	    
 	    /*
 		for(int j=2; i<8;i++)
@@ -87,6 +103,6 @@ public class Dates {
 	    System.out.println("Minute: " + minute);
 	    System.out.println("Nous sommes le : " + jour1 + " " + date + " " + mois1
 	    		+ " " + annee + ", il est " + heure + " h " + minute + " mn");
-	*/   }
+	*/   
 
 }
