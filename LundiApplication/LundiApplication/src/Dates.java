@@ -3,8 +3,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 
-
-public class Dates {
+public class Dates {	
 	String mois[] = {"janvier", "février", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "décembre"};
 	String jour[] = {"", "dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"};
 
@@ -12,9 +11,7 @@ public class Dates {
 
 	int date, annee, heure, minute;
 
-	//Date datetime;
-
-	Date uneDate;
+	Date maintenant;
 
 	  Calendar calendar = new GregorianCalendar();
 
@@ -25,41 +22,48 @@ public class Dates {
 
 	  Dates()
 	  {
-	    //DateTime datetime = new DateTime(2012, 3, 26, 12, 36);
-		  uneDate = new Date();
+		  maintenant = new Date(); //La date est initialisée à maintenant, car au lancement du programme on a besoin de ça.
 	  }
 
 	  public void format() {
 
-	    //calendar.setTime(datetime);
+		calendar.setTime(maintenant);
 
-		calendar.setTime(uneDate);
+		
+	    //Comme ça on imprime les jours du mois pour une semaine
+	    calendar.set(Calendar.DAY_OF_WEEK, 2); //On récupère le Lundi de la semaine en cours.
+		for(int i=2; i<8;i++)
+	    {
+	    	calendar.set(Calendar.DAY_OF_WEEK, i);
+	    	System.out.println(calendar.get(Calendar.DATE));
+	    }
+		calendar.set(Calendar.DAY_OF_WEEK, 1);
+    	System.out.println(calendar.get(Calendar.DATE));
 
-	    jour1 = jour[calendar.get(Calendar.DAY_OF_WEEK)];
+
+		/*	    jour1 = jour[calendar.get(Calendar.DAY_OF_WEEK)];
 		date = calendar.get(Calendar.DAY_OF_MONTH);
 		mois1 = mois[calendar.get(Calendar.MONTH)];
 		annee = calendar.get(Calendar.YEAR);
 		heure = calendar.get(Calendar.HOUR_OF_DAY);
-		minute = calendar.get(Calendar.MINUTE);
+		minute = calendar.get(Calendar.MINUTE);*/
 
-	    calendar.set(Calendar.DAY_OF_WEEK, 4);/*
-		calendar.set(Calendar.DAY_OF_MONTH, 13);*/
+
+	    /*
+		calendar.set(Calendar.DAY_OF_MONTH, 13);
 		calendar.set(Calendar.MONTH, 6);
 		calendar.set(Calendar.YEAR, 2016);
 		calendar.set(Calendar.HOUR_OF_DAY, 13);
-		calendar.set(Calendar.MINUTE, 52);
+		calendar.set(Calendar.MINUTE, 52);*/
 
-	    System.out.println("Jour de la semaine: " + jour1);
-	  //  calendar.add(Calendar.DAY_OF_MONTH, 1);
-	    jour1 = jour[calendar.get(Calendar.DAY_OF_WEEK)];
-	    System.out.println("Jour de la semaine: " + jour1);
-	    System.out.println("Jour du mois: " + calendar.get(Calendar.DAY_OF_MONTH));
+	    //calendar.add(Calendar.DAY_OF_MONTH, 1);
+//	    System.out.println("Jour du mois: " + calendar.get(Calendar.DAY_OF_MONTH));
 
 
-/*
-	    System.out.println(calendar);
+    	
+    	
 	    //System.out.println("Date: " + calendar.get(Calendar.DATE));
-	    System.out.println("Jour du mois: " + date);
+	    /*System.out.println("Jour du mois: " + date);
 	    System.out.println("Mois: " + mois1);
 	    System.out.println("Année: " + annee);
 	    //System.out.println("AM_PM: " + calendar.get(Calendar.AM_PM));
