@@ -1,6 +1,10 @@
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
+import java.util.Calendar          ;
+import java.util.Date              ;
+import java.util.GregorianCalendar ;
+
+import java.text.DateFormat        ; //pour passer une chaîne de caractères en date
+import java.text.ParseException    ; //pour passer une chaîne de caractères en date
+import java.text.SimpleDateFormat  ; //pour passer une chaîne de caractères en date
 
 
 public class Dates {	
@@ -17,7 +21,7 @@ public class Dates {
 
 	  public static void main(String[] a)
 	  {
-	    new Dates().semaineAvant();
+	    new Dates().chaineEnDate("28/7/2016");
 	  }
 
 	  Dates()
@@ -60,6 +64,21 @@ public class Dates {
 		  calendar.set(Calendar.DAY_OF_WEEK, 2)   ;
 	      calendar.add(Calendar.DAY_OF_MONTH, -7) ;
 	      System.out.println(calendar.get(Calendar.DATE) + "/" + (calendar.get(Calendar.MONTH)+1)); //Imprimer jour et mois courants
+	  }
+	  
+	  public void chaineEnDate(String str)
+	  {
+		  DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+		  Date date=null;
+		  try
+		  {
+		    date= df.parse(str);
+		  }
+		  catch (ParseException e)
+		  {
+			e.printStackTrace();
+		  }
+		  System.out.println(date);
 	  }
 	    
 	    
