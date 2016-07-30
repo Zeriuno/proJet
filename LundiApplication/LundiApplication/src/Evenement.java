@@ -1,34 +1,54 @@
-import java.util.Scanner;
+
+
 
 public class Evenement {
-    
-	//attributs 
-	String textEven;
-	String nomEven;
-	int idEven;
-	private static int cpt=0; //pk on peux pas utiliser id directement
-	
-	//constructeur 
+
+	Bdmanager robot=new Bdmanager();
+
+	//attributs
+	String textEven ;
+	String nomEven  ;
+	int idEven   ;
+
+
+	//constructeur
 	public Evenement( String nomEven ) {
 		this.nomEven = nomEven;
-		this.idEven = cpt++;			
 	}
-	public Evenement( String nomEven, String textEven ) {
-		this.textEven = textEven;
-		this.nomEven=nomEven;
-		this.idEven = cpt++;			
+	public Evenement(String nomEven, String textEven ) {
+		this.textEven = textEven    ;
+		this.nomEven=nomEven        ;
+		this.idEven=Bdmanager.geneId();
+		Bdmanager.ajoutEven(idEven,nomEven, textEven);
+
 	}
-	// méthode
+
+	//methode
+	//ajouter invitation
+	public void ajoutIvitation(String mailPers){
+		Bdmanager.ajoutInvitation(mailPers, idEven);	
+	}
+	//modif invitation 
+	
+	
+	//supprission invitation
+	public void supInvitation(){
+		Bdmanager.supInvitation(idEven);
+	}
+	
+	//affichage 
+	public void extraInvitation(){
+		Bdmanager.extraInvitation(idEven);
+	}
+	
+	/*
 	public String setText(){
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Saisir le contenu :");
-	    String str = sc.nextLine(); 
+	    String str = sc.nextLine();
 	    this.textEven=str;
-	    sc.close();
-		return textEven;		
-	}
-	
-	public String toString(){
-	    return nomEven+": "+textEven;
-   }
+		return textEven;
+		
+	}*/
+
 }

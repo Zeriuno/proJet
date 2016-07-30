@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 public class ConnexionJM {
 	
 	public static void main(String[] args) {
-		sauverEnBase("Jean","dupont");
+		sauverEnBase("Sorbonne","avec dupont");
 		lireEnBase();
 	}
 	
@@ -26,19 +26,19 @@ public class ConnexionJM {
 			// Etape 1 : Chargement du driver
 			Class.forName("com.mysql.jdbc.Driver");
 
-			// Etape 2 : rÃ©cupÃ©ration de la connexion
+			// Etape 2 : récupération de la connexion
 			cn = DriverManager.getConnection(url, login, passwd);
 
-			// Etape 3 : CrÃ©ation d'un statement
+			// Etape 3 : Création d'un statement
 			st = cn.createStatement();
 
-			String sql = "INSERT INTO `javadb` (`nomEven`) VALUES ('"
-					+ nomEven + "')";
+			String sql = "INSERT INTO `javadb` (`nomEven`,`textEven`) VALUES ('"
+					+ nomEven + "','" + textEven +"')";
 
-			// Etape 4 : exÃ©cution requÃªte
+			// Etape 4 : exécution requête
 			st.executeUpdate(sql);
 
-			// Si rÃ©cup donnÃ©es alors Ã©tapes 5 (parcours Resultset)
+			// Si récup données alors étapes 5 (parcours Resultset)
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -47,7 +47,7 @@ public class ConnexionJM {
 			e.printStackTrace();
 		} finally {
 			try {
-			// Etape 6 : libÃ©rer ressources de la mÃ©moire.
+			// Etape 6 : libérer ressources de la mémoire.
 				cn.close();
 				st.close();
 			} catch (SQLException e) {
@@ -57,7 +57,7 @@ public class ConnexionJM {
 	  }
 	public static void lireEnBase() {
 
-		// Information d'accÃ¨s Ã  la base de donnÃ©es
+		// Information d'accès à la base de données
 		String url = "jdbc:mysql://localhost/formation";
 		String login = "root";
 		String passwd = "";
@@ -70,21 +70,23 @@ public class ConnexionJM {
 			// Etape 1 : Chargement du driver
 			Class.forName("com.mysql.jdbc.Driver");
 
-			// Etape 2 : rÃ©cupÃ©ration de la connexion
+			// Etape 2 : récupération de la connexion
 			cn = DriverManager.getConnection(url, login, passwd);
 
-			// Etape 3 : CrÃ©ation d'un statement
+			// Etape 3 : Création d'un statement
 			st = cn.createStatement();
 
 			String sql = "SELECT * FROM javadb";
 
-			// Etape 4 : exÃ©cution requÃªte
+			// Etape 4 : exécution requête
 			rs = st.executeQuery(sql);
 
-			// Si rÃ©cup donnÃ©es alors Ã©tapes 5 (parcours Resultset)
+			// Si récup données alors étapes 5 (parcours Resultset)
 
 			while (rs.next()) {
-				System.out.println(rs.getString("nomEven"));
+				System.out.print(rs.getString("nomEven"));
+				System.out.println(rs.getString("textEven"));
+				
 				
 			}
 		} catch (SQLException e) {
@@ -93,7 +95,7 @@ public class ConnexionJM {
 			e.printStackTrace();
 		} finally {
 			try {
-			// Etape 6 : libÃ©rer ressources de la mÃ©moire.
+			// Etape 6 : libérer ressources de la mémoire.
 				cn.close();
 				st.close();
 			} catch (SQLException e) {
