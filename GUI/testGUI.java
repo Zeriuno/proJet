@@ -19,7 +19,7 @@ public class testGUI {
         //Evenement n= new Evenement("lo", "yo","@yoyo");
 //		n.setText();	 
 //		System.out.println(n.toString());
-		
+
 		JFrame fenetreCalendrier = new FCalendrier();
 	    JFrame fenetreSaisieEven = new FSaisieEven();
 	    JFrame fenetreSaisiePers = new FSaisiePers();
@@ -35,10 +35,10 @@ public class testGUI {
 	    //Termine le processus lorsqu'on clique sur la croix rouge
 	    fenetreSaisieEven.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    fenetreSaisiePers.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	    //Et enfin, la rendre visible        
+	    //Et enfin, la rendre visible
+	    fenetreCalendrier.setVisible(true);
 	    fenetreSaisieEven.setVisible(true);
 	    fenetreSaisiePers.setVisible(true);
-	    
 		
 	}
 
