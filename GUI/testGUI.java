@@ -20,25 +20,12 @@ public class testGUI {
 //		n.setText();	 
 //		System.out.println(n.toString());
 
-		JFrame fenetreCalendrier = new FCalendrier();
-	    JFrame fenetreSaisieEven = new FSaisieEven();
-	    JFrame fenetreSaisiePers = new FSaisiePers();
+	    CalendrierGUI fenetre = new CalendrierGUI();
+	   //Fenetre fenetre = new Fenetre();
+	   
+	        
+	    fenetre.setVisible(true);
 	    
-	    
-	                
-	    //Définit un titre pour notre fenêtre
-	    fenetreSaisieEven.setTitle("Nouvel Evènement");
-	    fenetreSaisiePers.setTitle("Nouveau Contact");
-	    //Nous demandons maintenant à notre objet de se positionner au centre
-	    fenetreSaisieEven.setLocationRelativeTo(null);
-	    fenetreSaisiePers.setLocationRelativeTo(null);
-	    //Termine le processus lorsqu'on clique sur la croix rouge
-	    fenetreSaisieEven.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	    fenetreSaisiePers.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	    //Et enfin, la rendre visible
-	    fenetreCalendrier.setVisible(true);
-	    fenetreSaisieEven.setVisible(true);
-	    fenetreSaisiePers.setVisible(true);
 		
 	}
 
