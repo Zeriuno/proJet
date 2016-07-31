@@ -16,7 +16,7 @@ public class FSaisieEven extends JFrame{
 	private JPanel pan=new JPanel();
 	private JPanel calendrier=new JPanel();
 	private JPanel container = new JPanel();
-    private JButton boutonG=new JButton("< Précedant");
+    private JButton boutonG=new JButton("< PrÃ©cedant");
     private JButton boutonD=new JButton("Prochain >");
     private JButton boutonAjoutPers=new JButton("+Personne");
     private JButton boutonAjoutEven=new JButton("+Evenement");
@@ -25,23 +25,23 @@ public class FSaisieEven extends JFrame{
      * Champs de saisie
      */
     
-    private JTextField nomEven = new JTextField("RDV"); // Valeur par défaut
-    private JLabel labelnomEven = new JLabel("Titre événement:"); // texte avant le champ
-    private JTextField invite = new JTextField("moi@domai.ne"); // Valeur par défaut
-    private JLabel labelinvite = new JLabel("Invité:"); // texte avant le champ
-    private JTextField dateEven = new JTextField("JJ/MM/AAAA"); // Valeur par défaut
+    private JTextField nomEven = new JTextField("RDV"); // Valeur par dÃ©faut
+    private JLabel labelnomEven = new JLabel("Titre Ã©vÃ©nement:"); // texte avant le champ
+    private JTextField invite = new JTextField("moi@domai.ne"); // Valeur par dÃ©faut
+    private JLabel labelinvite = new JLabel("InvitÃ©:"); // texte avant le champ
+    private JTextField dateEven = new JTextField("JJ/MM/AAAA"); // Valeur par dÃ©faut
     private JLabel labeldateEven = new JLabel("Date:"); // texte avant le champ
-    private JTextField heureDeb = new JTextField("HH:MM"); // Valeur par défaut
-    private JLabel labelheureDeb = new JLabel("Heure de début:"); // texte avant le champ
-    private JTextField heureFin = new JTextField("HH:MM"); // Valeur par défaut
+    private JTextField heureDeb = new JTextField("HH:MM"); // Valeur par dÃ©faut
+    private JLabel labelheureDeb = new JLabel("Heure de dÃ©but:"); // texte avant le champ
+    private JTextField heureFin = new JTextField("HH:MM"); // Valeur par dÃ©faut
     private JLabel labelheureFin = new JLabel("Heure de fin:"); // texte avant le champ
     		
 	public FSaisieEven() {
 		this.setTitle("Bouton");
-	    this.setSize(1200, 300);
+	    this.setSize(1400, 300);
 	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    this.setLocationRelativeTo(null);
-	  //On définit le layout à utiliser sur le content pane
+	  //On dÃ©finit le layout Ã  utiliser sur le content pane
 
 	    //this.setLayout(new GridLayout());
 	   
@@ -55,7 +55,7 @@ public class FSaisieEven extends JFrame{
 	    //Boxlayout
 
 	    JPanel b1 = new JPanel();
-	    //On définit le layout en lui indiquant qu'il travaillera en ligne
+	    //On dÃ©finit le layout en lui indiquant qu'il travaillera en ligne
 	    b1.setLayout(new BoxLayout(b1, BoxLayout.LINE_AXIS));
 	    b1.add(new JButton("Bouton 1"));
 
