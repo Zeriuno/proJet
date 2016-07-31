@@ -19,21 +19,25 @@ public class testGUI {
         //Evenement n= new Evenement("lo", "yo","@yoyo");
 //		n.setText();	 
 //		System.out.println(n.toString());
-
-	    JFrame fenetre = new FCalendrier();
+		
+		JFrame fenetreCalendrier = new FCalendrier();
+	    JFrame fenetreSaisieEven = new FSaisieEven();
+	    JFrame fenetreSaisiePers = new FSaisiePers();
 	    
 	    
 	                
-	    //Définit un titre pour notre fenêtre
-	    fenetre.setTitle("Ma première fenêtre Java");
-	    //Définit sa taille : 400 pixels de large et 100 pixels de haut
-	    fenetre.setSize(1000, 800);
-	    //Nous demandons maintenant à notre objet de se positionner au centre
-	    fenetre.setLocationRelativeTo(null);
+	    //DÃ©finit un titre pour notre fenÃªtre
+	    fenetreSaisieEven.setTitle("Nouvel EvÃ¨nement");
+	    fenetreSaisiePers.setTitle("Nouveau Contact");
+	    //Nous demandons maintenant Ã  notre objet de se positionner au centre
+	    fenetreSaisieEven.setLocationRelativeTo(null);
+	    fenetreSaisiePers.setLocationRelativeTo(null);
 	    //Termine le processus lorsqu'on clique sur la croix rouge
-	    fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    fenetreSaisieEven.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    fenetreSaisiePers.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    //Et enfin, la rendre visible        
-	    fenetre.setVisible(true);
+	    fenetreSaisieEven.setVisible(true);
+	    fenetreSaisiePers.setVisible(true);
 	    
 		
 	}
