@@ -20,9 +20,9 @@ public class testGUI {
 //		n.setText();	 
 //		System.out.println(n.toString());
 
-	    CalendrierGUI fenetre = new CalendrierGUI();
+	   // CalendrierGUI fenetre = new CalendrierGUI();
 	   //Fenetre fenetre = new Fenetre();
-	   
+	   CalendrierFenetre fenetre = new CalendrierFenetre();
 	        
 	    fenetre.setVisible(true);
 	    
