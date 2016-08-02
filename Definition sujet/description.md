@@ -25,6 +25,10 @@ L'application permet de créer, modifier et afficher un agenda.
    * heure début et fin
 
 * Une personne peut être associée à l'évènement
+* Composition d'une personne
+	* nom
+	* prénom
+	* mail
  * Avant de fermer la session le programme montre une liste des personnes à prévenir. Les personnes à prévenir sont celles présentes dans des évènements créés ou bien modifiés.
 
 ### Base de données
