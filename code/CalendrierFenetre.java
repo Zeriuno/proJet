@@ -1,9 +1,16 @@
 import java.awt.*;
+
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-public class CalendrierFenetre extends JFrame{
 
+public class CalendrierFenetre extends JFrame{
+	private JButton boutonG=new JButton("< Précedant");
+    private JButton boutonD=new JButton("Suivant >");
+    private JButton boutonAjoutPers=new JButton("+Personne");
+    private JButton boutonAjoutEven=new JButton("+Evenement");
+	
 	public CalendrierFenetre(){
 		    super();
 		    build();
@@ -24,7 +31,6 @@ public class CalendrierFenetre extends JFrame{
 		div.setPreferredSize(new Dimension(1200, 860));
 	    div.setBackground(Color.WHITE);
 	    div.setLayout(new BorderLayout());
-
 	    
 	    
 	    //I.panel  pour l'entetement 
@@ -85,7 +91,7 @@ public class CalendrierFenetre extends JFrame{
 	    semaine.add(samedi);
 	    semaine.add(dimanche);
 	    
-	    //III.panel gauch
+	    //III.panel gauche
 	  	JPanel panelG = new JPanel();
 	  	panelG.setPreferredSize(new Dimension(100, 640));
 	  	panelG.setBackground(Color.red);
@@ -96,6 +102,10 @@ public class CalendrierFenetre extends JFrame{
 	  	boutons.setPreferredSize(new Dimension(1100, 100));
 	  	boutons.setBackground(Color.red);
 	  	boutons.setLayout(new FlowLayout());
+	  	boutons.add(boutonG);
+	  	boutons.add(boutonD);
+	  	boutons.add(boutonAjoutEven);
+	  	boutons.add(boutonAjoutPers);
 	    
 	    
 		
