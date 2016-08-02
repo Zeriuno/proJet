@@ -22,7 +22,7 @@ public class FSaisieEven extends JFrame{
     private JButton boutonD=new JButton("Prochain >");
     private JButton boutonAjoutPers=new JButton("+Personne");
     private JButton boutonAjoutEven=new JButton("+Evenement");
-    private JButton b1 =new JButton("BOUTON 1"); // bouton placé en private et pas 
+    private JButton b1 =new JButton("ENREGISTRER"); // bouton placé en private et pas 
     //dans la méthode car sinon on n'arrive pas à dire au bouton qu'il est écouté
     
     /*
@@ -31,6 +31,8 @@ public class FSaisieEven extends JFrame{
     
     private JTextField nomEven = new JTextField("RDV"); // Valeur par défaut
     private JLabel labelnomEven = new JLabel("Titre événement:"); // texte avant le champ
+    private JTextField lieu = new JTextField("Lieu"); // Valeur par défaut
+    private JLabel labellieu = new JLabel("Lieu:"); // texte avant le champ
     private JTextField invite = new JTextField("moi@domai.ne"); // Valeur par défaut
     private JLabel labelinvite = new JLabel("Invité:"); // texte avant le champ
     private JTextField dateEven = new JTextField("JJ/MM/AAAA"); // Valeur par défaut
@@ -39,7 +41,7 @@ public class FSaisieEven extends JFrame{
     private JLabel labelheureDeb = new JLabel("Heure de début:"); // texte avant le champ
     private JTextField heureFin = new JTextField("HH:MM"); // Valeur par défaut
     private JLabel labelheureFin = new JLabel("Heure de fin:"); // texte avant le champ
-    		
+    
 	public FSaisieEven() {
 		this.setTitle("Bouton");
 	    this.setSize(1200, 300);
@@ -94,22 +96,27 @@ public class FSaisieEven extends JFrame{
 	    //nomEven.setForeground(Color.BLUE); // style
 	    top.add(labelnomEven);
 	    top.add(nomEven);
+	  //lieu.setFont(police); // style
+	    lieu.setPreferredSize(new Dimension(150, 30));
+	    //nomEven.setForeground(Color.BLUE); // style
+	    top.add(labellieu);
+	    top.add(lieu);
 	    invite.setPreferredSize(new Dimension(150, 30));
 	    //nomEven.setForeground(Color.BLUE); // style
 	    top.add(labelinvite);
 	    top.add(invite);
-	    dateEven.setPreferredSize(new Dimension(150, 30));
+	    dateEven.setPreferredSize(new Dimension(90, 30));
 	    top.add(labeldateEven);
 	    top.add(dateEven);
 	    top.add(labelheureDeb);
 	    top.add(heureDeb);
-	    heureDeb.setPreferredSize(new Dimension(150, 30));
+	    heureDeb.setPreferredSize(new Dimension(60, 30));
 	    top.add(labelheureFin);
 	    top.add(heureFin);
 	    //heureFin.setFont(police);
-	    heureFin.setPreferredSize(new Dimension(150, 30));
+	    heureFin.setPreferredSize(new Dimension(60, 30));
 	    //heureFin.setForeground(Color.BLUE);
-	    
+	    	    
 	    
 	    container.add(top, BorderLayout.NORTH);
 	    this.setContentPane(container);
@@ -123,6 +130,7 @@ public class FSaisieEven extends JFrame{
 	class BoutonListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
 			System.out.println("TEXT : nomEven " + nomEven.getText());
+			System.out.println("TEXT : lieu " + lieu.getText());
 			System.out.println("TEXT : invite " + invite.getText());
 			System.out.println("TEXT : dateEven " + dateEven.getText());
 			System.out.println("TEXT : heureDeb " + heureDeb.getText());
