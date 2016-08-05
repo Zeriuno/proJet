@@ -2,18 +2,25 @@ import java.util.Calendar          ;
 import java.util.Date              ;
 import java.util.GregorianCalendar ;
 
+
+// à priori ces trois imports suivants sont inutiles, laissons pour le moment.
 import java.text.DateFormat        ; //pour passer une chaîne de caractères en date
 import java.text.ParseException    ; //pour passer une chaîne de caractères en date
 import java.text.SimpleDateFormat  ; //pour passer une chaîne de caractères en date
 
 
-public class Dates {	
-	String mois[] = {"janvier", "février", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "décembre"};
-	String jour[] = {"", "dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"};
+public class Dates {
+	/*
+	 * 
+	 */
+	
+	//Ce tableau permet de faire la correspondance entre les noms de la semaine et les jours renvoyés par calendar.get(Calendar.DAY_OF_WEEK) 
+	//String jour[] = {"", "dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"};
 
-	String jour1, jour2, mois1;
+	String moisChaine ;
 
-	int date, annee, heure, minute;
+	int anneeJeudi, moisLundi, moisDimanche, anneeLundi, anneeDimanche ; //ajouter mois Lundi et moisDimanche, anneeLundi, anneeDimanche
+	int[] semaine = new int [7]             ;
 
 	Date maintenant;
 
@@ -21,49 +28,40 @@ public class Dates {
 
 	  public static void main(String[] a)
 	  {
-	    new Dates().chaineEnDate("28/7/2016");
+	    Dates yo = new Dates();
+	    System.out.println(yo.anneeJeudi);
 	  }
 
 	  Dates()
+	  /*
+	   * this.semaine[] contiendra la date des jours de la semaine: du Lundi (this.semaine[0]) au Dimanche (this.semaine[6])
+	   */
 	  {
-		  maintenant = new Date(); //La date est initialisée à maintenant, car au lancement du programme on a besoin de ça.
+		  maintenant = new Date() ; //La date est initialisée à maintenant, car au lancement du programme on a besoin de ça.
+		  this.remplirSemaine()   ;
 	  }
 //	    System.out.println(calendar.get(Calendar.DATE) + "/" + (calendar.get(Calendar.MONTH)+1)); //Imprimer jour et mois courants
-	  public void cetteSemaine()
-	  {
-		calendar.setTime(maintenant);
-		
-	    //Comme ça on imprime les jours du mois pour une semaine
-	    int i = 3 ;
-		calendar.set(Calendar.DAY_OF_WEEK, i)      ; //On récupère le Lundi de la semaine en cours.
-	    int Lundi = calendar.get(Calendar.DATE)    ;
-	    calendar.set(Calendar.DAY_OF_WEEK, i++)    ;
-	    int Mardi = calendar.get(Calendar.DATE)    ;
-	    calendar.set(Calendar.DAY_OF_WEEK, i++)    ;
-	    int Mercredi = calendar.get(Calendar.DATE) ;
-	    calendar.set(Calendar.DAY_OF_WEEK, i++)    ;
-	    int Jeudi = calendar.get(Calendar.DATE)    ;
-	    calendar.set(Calendar.DAY_OF_WEEK, i++)    ;
-	    int Vendredi = calendar.get(Calendar.DATE) ;
-	    calendar.set(Calendar.DAY_OF_WEEK, i++)    ;
-	    int Samedi = calendar.get(Calendar.DATE)   ;
-	    calendar.set(Calendar.DAY_OF_WEEK, i++)    ;
-	    int Dimanche = calendar.get(Calendar.DATE) ;
-	  }
 	  
 	  public void semainePro()
+	  /*
+	   * À appeller quand on avance d'une semaine
+	   */
 	  {
-		calendar.setTime(maintenant)           ;
-		calendar.set(Calendar.DAY_OF_WEEK, 2)  ;
-		calendar.add(Calendar.DAY_OF_MONTH, 7) ;
+		  calendar.setTime(maintenant)           ;
+		  calendar.set(Calendar.DAY_OF_WEEK, 2)  ;
+		  calendar.add(Calendar.DAY_OF_MONTH, 7) ;
+		  this.remplirSemaine()                  ;
 	  }
 	  
 	  public void semaineAvant()
+	  /*
+	   * À appeller quand on recule d'une semaine
+	   */
 	  {
 		  calendar.setTime(maintenant)            ;
 		  calendar.set(Calendar.DAY_OF_WEEK, 2)   ;
 	      calendar.add(Calendar.DAY_OF_MONTH, -7) ;
-	      System.out.println(calendar.get(Calendar.DATE) + "/" + (calendar.get(Calendar.MONTH)+1)); //Imprimer jour et mois courants
+	      this.remplirSemaine()                   ;
 	  }
 	  
 	  public void chaineEnDate(String str)
@@ -79,6 +77,23 @@ public class Dates {
 			e.printStackTrace();
 		  }
 		  System.out.println(date);
+	  }
+	  
+	  private void remplirSemaine()
+	  {
+		  int j = 0 ;
+		  //Comme ça on imprime les jours du mois pour une semaine
+		  for(int i =2 ; i< 9; i++)
+		  {
+		  	calendar.set(Calendar.DAY_OF_WEEK, i)         ;
+		  	this.semaine[j] = calendar.get(Calendar.DATE) ;
+		  	System.out.println(this.semaine[j]) ;
+		  	j++                                           ;
+		  }
+		  calendar.set(Calendar.DAY_OF_WEEK, 5)         ;  // on se place au Jeudi
+		  this.anneeJeudi = calendar.get(Calendar.YEAR) ;  // this.anneeJeudi prend la valeur 
+		  String mois[] = {"janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"};
+		  this.moisChaine = mois[calendar.get(Calendar.MONTH)] ;
 	  }
 	    
 	    
