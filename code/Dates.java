@@ -39,10 +39,12 @@ public class Dates {
 	    System.out.println(yo.anneeJeudi);
 	  }
 
-	  Dates()
-	  /*
-	   * this.semaine[] contiendra la date des jours de la semaine: du Lundi (this.semaine[0]) au Dimanche (this.semaine[6])
-	   */
+	public Dates()
+	/*
+	 * Constructeur de l'objet Dates.
+	 * Initialise l'objet Date à la date du système et appelle la fonction this.remplirSemaine 
+	 * qui renseigne les autres variables de l'objet.
+	 */
 	  {
 		  maintenant = new Date() ; //La date est initialisée à maintenant, car au lancement du programme on a besoin de ça.
 		  this.remplirSemaine()   ;
