@@ -28,19 +28,12 @@ public class Dates {
 	 * 
 	 */
 	
-	//Ce tableau permet de faire la correspondance entre les noms de la semaine et les jours renvoyés par calendar.get(Calendar.DAY_OF_WEEK) 
-	//String jour[] = {"", "dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"};
-
-	String moisChaine ;
-
-	int anneeJeudi, moisLundi, moisDimanche, anneeLundi, anneeDimanche ; //ajouter mois Lundi et moisDimanche, anneeLundi, anneeDimanche
-	int[] semaine = new int [7]             ;
-
-	Date maintenant;
-
-	  Calendar calendar = new GregorianCalendar();
-
-	  public static void main(String[] a)
+	String moisChaine           ;
+	int anneeJeudi              ;
+	int[] semaine = new int [7] ;
+	Date maintenant             ;
+    Calendar calendar = new GregorianCalendar() ;
+    public static void main(String[] a)
 	  {
 	    Dates yo = new Dates();
 	    System.out.println(yo.anneeJeudi);
