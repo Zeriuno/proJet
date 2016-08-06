@@ -1,7 +1,9 @@
+import java.text.ParseException;
+
 import javax.swing.JFrame;
 public class testGUI {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 		 
 		//Bdmanager robot=new Bdmanager();
 		 //Evenement n= new Evenement("Yo", "Lo");
@@ -20,13 +22,22 @@ public class testGUI {
 //		n.setText();	 
 //		System.out.println(n.toString());
 
-	   // CalendrierGUI fenetre = new CalendrierGUI();
+	   //CalendrierGUI fenetre = new CalendrierGUI();
 	   //Fenetre fenetre = new Fenetre();
 	   CalendrierFenetre fenetre = new CalendrierFenetre();
-	        
-	    fenetre.setVisible(true);
+	   //SaisieEvenFenetre fenetre1 = new SaisieEvenFenetre();
+	   //SaisiePersFenetre fenetre2 = new SaisiePersFenetre();
+	  fenetre.setVisible(true);
+	   //fenetre1.setVisible(true);
+	   //fenetre2.setVisible(false);
+	   /*String email="address@mail";
+	   Evenement n= new Evenement("Go", "Go","25/06/1989 16:00","25/06/1989 16:50");
+	   System.out.println(n.selectPers(email));*/
 	    
+		//Dates day = new Dates();
+		//day.cetteSemaine();
+		//System.out.println(day.jour);
 		
-	}
+	}   
 
 }
