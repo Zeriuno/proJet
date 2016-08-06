@@ -91,12 +91,10 @@ public class Dates {
 	  private void remplirSemaine()
 	  {
 		  int j = 0 ;
-		  //Comme ça on imprime les jours du mois pour une semaine
 		  for(int i =2 ; i< 9; i++)
 		  {
 		  	calendar.set(Calendar.DAY_OF_WEEK, i)         ;
 		  	this.semaine[j] = calendar.get(Calendar.DATE) ;
-		  	System.out.println(this.semaine[j]) ;
 		  	j++                                           ;
 		  }
 		  calendar.set(Calendar.DAY_OF_WEEK, 5)         ;  // on se place au Jeudi
