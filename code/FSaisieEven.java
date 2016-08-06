@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class FSaisieEven extends JFrame{
-	private JPanel container = new JPanel();
+	private JPanel container = new JPanel(); 
     private JButton b1 =new JButton("ENREGISTRER"); // bouton placé en private et pas 
     
     // Champs de saisie
@@ -36,12 +36,19 @@ public class FSaisieEven extends JFrame{
 	    this.setSize(600, 150);
 	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    this.setLocationRelativeTo(null);
-	  	    
-	    b1.addActionListener(new BoutonListener()); //on indique au bouton qu'il est écouté
-
+	  	
+	    //Remarque :
+	    //boutonlistenner permet d'indiquer le bouton d'action 
+	    //actiolisener permet de utiliser la fonction actionPerformed 
+	    //actionPerformed permet aux bouton d'appeller l'action
 	    
-	    container.setBackground(Color.white);
+	    b1.addActionListener(new BoutonListener()); 
+	    //on indique au bouton qu'il est écouté
+
+	    //I.Container n'est pas utilisé....
+	    container.setBackground(Color.blue);
 	    container.setLayout(new BorderLayout());
+	    //II.div pour les boutons et les panels
 	    JPanel top = new JPanel();
 	    Font police = new Font("Arial", Font.BOLD, 14);
 	    nomEven.setPreferredSize(new Dimension(220, 30));
@@ -64,11 +71,12 @@ public class FSaisieEven extends JFrame{
 	    heureFin.setPreferredSize(new Dimension(50, 30));
 	    top.add(b1);
 	    	    
-	    this.setContentPane(top);
+	    //this.setContentPane(top);
 	    this.setVisible(true);
 	}
 	
-	// on écoute le bouton pour récupérer les données saisies dans les champs de la fenêtre
+	
+	// actionPerformed permet de bouton appelle les méthodes actions !
 	class BoutonListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
 			System.out.println("TEXT : nomEven " + nomEven.getText());

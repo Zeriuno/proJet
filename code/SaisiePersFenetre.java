@@ -12,6 +12,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+// si la personne existe
+
+
 public class SaisiePersFenetre extends JFrame{
 	private JPanel container = new JPanel();
     private JButton b1 =new JButton("ENREGISTRER");

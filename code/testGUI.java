@@ -24,7 +24,8 @@ public class testGUI {
 
 	   //CalendrierGUI fenetre = new CalendrierGUI();
 	   //Fenetre fenetre = new Fenetre();
-	   CalendrierFenetre fenetre = new CalendrierFenetre();
+		Dates temps = new Dates();
+	   CalendrierFenetre fenetre = new CalendrierFenetre(temps);
 	   //SaisieEvenFenetre fenetre1 = new SaisieEvenFenetre();
 	   //SaisiePersFenetre fenetre2 = new SaisiePersFenetre();
 	  fenetre.setVisible(true);

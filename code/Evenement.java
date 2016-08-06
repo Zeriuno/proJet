@@ -1,5 +1,8 @@
-
-
+import java.lang.reflect.Array;
+import java.sql.Date;
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Evenement {
 
@@ -12,22 +15,45 @@ public class Evenement {
 
 
 	//constructeur
-	public Evenement( String nomEven ) {
+    public Evenement( String nomEven ) {
 		this.nomEven = nomEven;
 	}
-	public Evenement(String nomEven, String textEven ) {
+	public Evenement(String nomEven, String textEven, String debut, String fin ) throws ParseException {
 		this.textEven = textEven    ;
 		this.nomEven=nomEven        ;
+		
+		
+		// sql will manager id
+		//to do that : insert a blank line and get id
 		this.idEven=Bdmanager.geneId();
-		Bdmanager.ajoutEven(idEven,nomEven, textEven);
+		String debutEven = Bdmanager.convertDatetime(debut);
+		String finEven = Bdmanager.convertDatetime(fin);
+
+		Bdmanager.ajoutEven(idEven,nomEven,textEven,debutEven,finEven);
 
 	}
 
+	
 	//methode
+	
 	//ajouter invitation
 	public void ajoutIvitation(String mailPers){
+		
 		Bdmanager.ajoutInvitation(mailPers, idEven);	
 	}
+	// selecte personne 
+	public ArrayList<String> selectPers(String mailsPers){
+		
+		ArrayList<String> list = new ArrayList<String>();
+		
+		list=Bdmanager.selectPers(mailsPers);
+		
+		return list;
+		
+	}
+	
+	
+	
 	//modif invitation 
 	
 	

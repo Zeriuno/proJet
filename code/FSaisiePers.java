@@ -28,7 +28,7 @@ public class FSaisiePers extends JFrame{
 	public FSaisiePers() {
 		this.setTitle("Personne");
 	    this.setSize(700, 150);
-	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	    this.setLocationRelativeTo(null);
 	  
 	    b1.addActionListener(new BoutonListener());

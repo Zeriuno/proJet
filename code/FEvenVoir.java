@@ -24,8 +24,8 @@ public class FEvenVoir extends JFrame{
 	private JPanel calendrier=new JPanel();
 	private JPanel container = new JPanel();
 	
-    /*
-     * Champs de saisie
+    
+    
     
     
     private JTextField nomEven = new JTextField("RDV"); // Valeur par défaut
@@ -38,7 +38,7 @@ public class FEvenVoir extends JFrame{
     private JLabel labelheureDeb = new JLabel("Heure de début:"); // texte avant le champ
     private JTextField heureFin = new JTextField("HH:MM"); // Valeur par défaut
     private JLabel labelheureFin = new JLabel("Heure de fin:"); // texte avant le champ
-     */
+     
     
 	public FEvenVoir(FEvenVoirPetit petit)
 	/*
