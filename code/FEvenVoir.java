@@ -1,16 +1,21 @@
 import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 
 import javax.swing.BoxLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+//import FEvenVoir.BoutonListener;
 
 /*
  * FenÃªtre qui montre les Ã©vÃ¨nements en dÃ©tail.
@@ -19,11 +24,14 @@ import javax.swing.JTextField;
  */
 
 public class FEvenVoir extends JFrame{
-	public String nomEven ;
-	private JPanel pan=new JPanel();
-	private JPanel calendrier=new JPanel();
-	private JPanel container = new JPanel();
+	public String nomEven = "Seminaire";
+	public String lieu = "Sorbonne";
+	public String invite = "PITROLO";
+	public String dateEven = "26/08/2016";
+	public String heureDeb = "10:30";
+	public String heureFin = "15:30";
 	
+<<<<<<< HEAD
     
     
     
@@ -60,78 +68,42 @@ public class FEvenVoir extends JFrame{
 		 */
 		
 	    this.setSize(1400, 300);
+=======
+	//private JPanel pan=new JPanel();
+	//private JPanel container = new JPanel();
+	private JButton b1 =new JButton("OK");
+	        
+	public FEvenVoir() {
+		this.setTitle("Affichage Evenement");
+	    this.setSize(300, 300);
+>>>>>>> f6250d558f88f2dc1992f5837105ef83af9534f4
 	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    this.setLocationRelativeTo(null);
-	    //On dÃ©finit le layout Ã  utiliser sur le content pane
-
-	    //this.setLayout(new GridLayout());
-	   
-	    //BorderLayout
-	    this.getContentPane().add(boutonG, BorderLayout.SOUTH);
-	    //Grid  Layout
-	    this.setLayout(new GridLayout(1, 2));
-	    this.getContentPane().add(boutonG);
-	    this.getContentPane().add(boutonD);
-	    
-	    //Boxlayout
-
-	    JPanel b1 = new JPanel();
-	    //On dÃ©finit le layout en lui indiquant qu'il travaillera en ligne
-	    b1.setLayout(new BoxLayout(b1, BoxLayout.LINE_AXIS));
-	    b1.add(new JButton("Bouton 1"));
-
-	    JPanel b2 = new JPanel();
-	    //Idem pour cette ligne
-	    b2.setLayout(new BoxLayout(b2, BoxLayout.LINE_AXIS));
-	    b2.add(new JButton("Bouton 2"));
-	    b2.add(new JButton("Bouton 3"));
-
-	    JPanel b3 = new JPanel();
-	    //Idem pour cette ligne
-	    b3.setLayout(new BoxLayout(b3, BoxLayout.LINE_AXIS));
-	    b3.add(new JButton("Bouton 4"));
-	    b3.add(new JButton("Bouton 5"));
-	    b3.add(new JButton("Bouton 6"));
-
-	    JPanel b4 = new JPanel();
-	    //On positionne maintenant ces trois lignes en colonne
-	    b4.setLayout(new BoxLayout(b4, BoxLayout.PAGE_AXIS));
-	    b4.add(b1);
-	    b4.add(b2);
-	    b4.add(b3);
-
-	    container.setBackground(Color.white);
-	    container.setLayout(new BorderLayout());
-	    JPanel top = new JPanel();
+	  	    
+	    this.setBackground(Color.white);
+	    this.setLayout(new GridLayout(7, 1));
 	    Font police = new Font("Arial", Font.BOLD, 14);
-	    //nomEven.setFont(police); // style
-	    nomEven.setPreferredSize(new Dimension(150, 30));
-	    //nomEven.setForeground(Color.BLUE); // style
-	    top.add(labelnomEven);
-	    top.add(nomEven);
-	    invite.setPreferredSize(new Dimension(150, 30));
-	    //nomEven.setForeground(Color.BLUE); // style
-	    top.add(labelinvite);
-	    top.add(invite);
-	    dateEven.setPreferredSize(new Dimension(150, 30));
-	    top.add(labeldateEven);
-	    top.add(dateEven);
-	    top.add(labelheureDeb);
-	    top.add(heureDeb);
-	    heureDeb.setPreferredSize(new Dimension(150, 30));
-	    top.add(labelheureFin);
-	    top.add(heureFin);
-	    //heureFin.setFont(police);
-	    heureFin.setPreferredSize(new Dimension(150, 30));
-	    //heureFin.setForeground(Color.BLUE);
-	    
-	    
-	    container.add(top, BorderLayout.NORTH);
-	    this.setContentPane(container);
-	    
-	    this.getContentPane().add(b4);
-	    this.setVisible(true);
+	    this.getContentPane().add(new JLabel("Titre événement : " + nomEven));
+	    this.getContentPane().add(new JLabel("Lieu : " + lieu));
+	    this.getContentPane().add(new JLabel("Invité : " + invite));
+	    this.getContentPane().add(new JLabel("Date : " + dateEven));
+	    this.getContentPane().add(new JLabel("Heure de début : " + heureDeb));
+	    this.getContentPane().add(new JLabel("Heure de fin : " + heureFin));
+	    this.getContentPane().add(b1);
+	    	    
 	    this.setVisible(true);
 	}
+	
+	// on écoute le bouton pour récupérer les données saisies dans les champs de la fenêtre
+	/*class BoutonListener implements ActionListener{
+		public void actionPerformed(ActionEvent e){
+			System.out.println("TEXT : nomEven " + nomEven.getText());
+			System.out.println("TEXT : lieu " + lieu.getText());
+			System.out.println("TEXT : invite " + invite.getText());
+			System.out.println("TEXT : dateEven " + dateEven.getText());
+			System.out.println("TEXT : heureDeb " + heureDeb.getText());
+			System.out.println("TEXT : heureFin " + heureFin.getText());
+		}
+	}*/
     
 }
