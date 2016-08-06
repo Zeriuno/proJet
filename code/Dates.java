@@ -148,6 +148,14 @@ public class Dates {
 		  s =  String.valueOf(y) + "-" + String.valueOf(M) + "-" + String.valueOf(d);
 		  return s;
 	  }
+	  
+	  public void print()
+	  {
+		  for(int i: semaine)
+		  {
+			  System.out.println(i + " " + this.moisChaine + " "+ this.anneeJeudi);
+		  }
+	  }
 	    
 	    
 	    /*
