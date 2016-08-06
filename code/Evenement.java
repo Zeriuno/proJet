@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class Evenement {
 
-	Bdmanager robot=new Bdmanager();
+	Bdmanager robot=new Bdmanager(); // fait pour paresse, on peut plutôt le mettre en paramètre dans les fonctions qui le nécessitent 
 
 	//attributs
 	String textEven ;
