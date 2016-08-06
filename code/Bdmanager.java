@@ -9,9 +9,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
-//thing to do better 
-//1. in function ajout when text has "'" sql can't eat it
-//2. select personne -> how to return a structure of pls persons ?
+//things to improve
+// 0. REFACTOR
+// 1. in function ajout when text has "'" sql can't eat it → SANITIZE INPUT
+// 2. select personne -> how to return a structure of several persons ?  → return an ArrayList
 
 public class Bdmanager {
 
