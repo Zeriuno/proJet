@@ -14,8 +14,8 @@ public class Evenement {
 	int idEven       ;
 	String debutEven ; // format jj/MM/AAAA hh:mm
 	String finEven   ; // format jj/MM/AAAA hh:mm
-	int jourDebut    ; // date du mois
-  float dureeEven  ;
+	int jourDebut    ; // jour de la semaine: Lundi → 2 ... Dimanche → 8
+  float dureeEven  ; // Un évènement qui dure 1h30 = 1.5; 1h45 = 1.75
 
 	//constructeur
     public Evenement( String nomEven ) {
