@@ -80,7 +80,6 @@ public class Dates {
 	   * À appeller quand on recule d'une semaine
 	   */
 	  {
-		  calendar.setTime(maintenant)            ;
 		  calendar.set(Calendar.DAY_OF_WEEK, 2)   ;
 	      calendar.add(Calendar.DAY_OF_MONTH, -7) ;
 	      this.remplirSemaine()                   ;
