@@ -6,15 +6,16 @@ import java.util.Arrays;
 
 public class Evenement {
 
-	Bdmanager robot=new Bdmanager(); // fait pour paresse, on peut plutôt le mettre en paramètre dans les fonctions qui le nécessitent 
+	Bdmanager robot=new Bdmanager(); // fait pour paresse, on peut plutï¿½t le mettre en paramï¿½tre dans les fonctions qui le nï¿½cessitent
 
 	//attributs
-	String textEven ; // c'est le lieu, mais nous avons la flemme de changer le nom de la variable
-	String nomEven  ;
-	int idEven   ;
-	String finEven;
-	String debutEven;
-    int dureeEven;
+	String textEven  ; // c'est le lieu, mais nous avons la flemme de changer le nom de la variable
+	String nomEven   ;
+	int idEven       ;
+	String debutEven ; // format jj/MM/AAAA hh:mm
+	String finEven   ; // format jj/MM/AAAA hh:mm
+	int jourDebut    ; // date du mois
+  float dureeEven  ;
 
 	//constructeur
     public Evenement( String nomEven ) {
