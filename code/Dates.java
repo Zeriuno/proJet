@@ -102,6 +102,40 @@ public class Dates {
 		  String mois[] = {"janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"};
 		  this.moisChaine = mois[calendar.get(Calendar.MONTH)] ;
 	  }
+	  
+	  public String borneBasse()
+	  /*
+	   * Pour avoir la date du Lundi en format YYYY-MM-DD.
+	   * Elle est ainsi prête pour faire une requête dans la BDD.
+	   * 
+	   */
+	  {
+		  String s = new String()                     ;
+		  calendar.set(Calendar.DAY_OF_WEEK, 2)       ;
+		  int d = calendar.get(Calendar.DAY_OF_MONTH) ;
+		  int M = calendar.get(Calendar.MONTH) + 1    ;
+		  int y = calendar.get(Calendar.YEAR)         ;
+		  
+		  s =  String.valueOf(y) + "-" + String.valueOf(M) + "-" + String.valueOf(d);
+		  return s;
+	  }
+	  
+	  public String borneHaute()
+	  /*
+	   * Pour avoir la date du Dimanche en format YYYY-MM-DD.
+	   * Elle est ainsi prête pour faire une requête dans la BDD.
+	   * 
+	   */
+	  {
+		  String s = new String()                     ;
+		  calendar.set(Calendar.DAY_OF_WEEK, 8)       ;
+		  int d = calendar.get(Calendar.DAY_OF_MONTH) ;
+		  int M = calendar.get(Calendar.MONTH) + 1    ;
+		  int y = calendar.get(Calendar.YEAR)         ;
+		  
+		  s =  String.valueOf(y) + "-" + String.valueOf(M) + "-" + String.valueOf(d);
+		  return s;
+	  }
 	    
 	    
 	    /*
