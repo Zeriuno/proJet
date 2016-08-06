@@ -12,7 +12,9 @@ public class Evenement {
 	String textEven ;
 	String nomEven  ;
 	int idEven   ;
-
+	String finEven;
+	String debutEven;
+    int dureeEven;
 
 	//constructeur
     public Evenement( String nomEven ) {
