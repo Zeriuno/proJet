@@ -11,6 +11,20 @@ import java.text.SimpleDateFormat  ; //pour passer une chaîne de caractères en
 
 public class Dates {
 	/*
+	 * Classe pour manipuler les dates.
+	 * 
+	 * this.moisChaine: Mois du Jeudi de la semaine en cours, en chaîne de caractères.
+	 * this.anneeJeudi: Année du Jeudi, en int.
+	 * this.semaine[]: tableau de sept cases, met en correspondance les jours de la semaine avec les jours du mois 
+	 * 				   this.semaine[0] renvoie le combien du mois on est Lundi... this.semaine[7] pareil pour Dimance. 
+	 * 
+	 * Contient:
+	 * 			* Un constructeur (qui appelle remplirSemaine)
+	 * 			* La méthode void private remplirSemaine
+	 * 			* Les méthodes void pour réculer et avancer de semaine (font appel à remplirSemaine)
+	 * 			* Les méthodes String pour obtenir la date du Lundi (borneBasse) et du Dimanche (borneHaute)
+	 * 				en format YYYY-MM-DD
+	 * 			* Divers et variés développés au fur et à mésure et qui, au fait, ne sont pas utiles.
 	 * 
 	 */
 	
