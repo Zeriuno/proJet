@@ -6,18 +6,29 @@ import java.util.Arrays;
 
 public class Evenement {
 
-	Bdmanager robot=new Bdmanager();
+	Bdmanager robot=new Bdmanager(); // fait pour paresse, on peut plutôt le mettre en paramètre dans les fonctions qui le nécessitent 
 
 	//attributs
 	String textEven ; // c'est le lieu, mais nous avons la flemme de changer le nom de la variable
 	String nomEven  ;
 	int idEven   ;
-
+	String finEven;
+	String debutEven;
+    int dureeEven;
 
 	//constructeur
     public Evenement( String nomEven ) {
 		this.nomEven = nomEven;
 	}
+    public Evenement(String nomEven, String textEven, String debut, String fin ,int dureeEven){
+		this.textEven = textEven;
+		this.nomEven=nomEven;
+		this.debutEven=debut;
+		this.finEven =fin;
+		this.dureeEven=dureeEven;
+		}
+    
+    
 	public Evenement(String nomEven, String textEven, String debut, String fin ) throws ParseException {
 		this.textEven = textEven    ;
 		this.nomEven=nomEven        ;
@@ -26,8 +37,8 @@ public class Evenement {
 		// sql will manager id
 		//to do that : insert a blank line and get id
 		this.idEven=Bdmanager.geneId();
-		String debutEven = Bdmanager.convertDatetime(debut);
-		String finEven = Bdmanager.convertDatetime(fin);
+		this.debutEven = Bdmanager.convertDatetime(debut);
+		this.finEven = Bdmanager.convertDatetime(fin);
 
 		Bdmanager.ajoutEven(idEven,nomEven,textEven,debutEven,finEven);
 
