@@ -37,8 +37,8 @@ public class Evenement {
 		// sql will manager id
 		//to do that : insert a blank line and get id
 		this.idEven=Bdmanager.geneId();
-		String debutEven = Bdmanager.convertDatetime(debut);
-		String finEven = Bdmanager.convertDatetime(fin);
+		this.debutEven = Bdmanager.convertDatetime(debut);
+		this.finEven = Bdmanager.convertDatetime(fin);
 
 		Bdmanager.ajoutEven(idEven,nomEven,textEven,debutEven,finEven);
 
