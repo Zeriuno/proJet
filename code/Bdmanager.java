@@ -623,4 +623,51 @@ public static void extraInvitation(int idEven) {
 				}
 			}
 		  }
+
+    public static void recupSemaine()
+    {
+      String url = "jdbc:mysql://localhost/java";
+      String login="root";
+      String passwd="";
+      Connection cn=null;
+      Statement st=null;
+      ResultSet rs =null;
+      int id = 0;
+      try
+      {
+      // Etape 1 : Chargement du driver
+      Class.forName("com.mysql.jdbc.Driver");
+      // Etape 2 : récupération de la connexion
+      cn = DriverManager.getConnection(url, login, passwd);
+      st = cn.createStatement();
+      String sqlbis = "SELECT (idEven) from EVENEMENT WHERE ";
+      rs=st.executeQuery(sqlbis);
+      while(rs.next()){
+      id=rs.getInt(1);
+      System.out.println(rs.getInt(1));}
+      }
+      catch (SQLException e)
+      {
+        e.printStackTrace();
+      }
+      catch (ClassNotFoundException e)
+      {
+        // TODO: handle exception
+        e.printStackTrace();
+      }
+      finally
+      {
+        try
+        {
+        // Etape 6 : libérer ressources de la mémoire.
+          cn.close();
+          st.close();
+        }
+        catch (SQLException e)
+        {
+          e.printStackTrace();
+        }
+      }
+      return id;
+      }
 }
