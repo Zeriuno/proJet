@@ -5,6 +5,8 @@ import java.awt.Font;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,16 +14,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-// si la personne existe
-
-
 public class SaisiePersFenetre extends JFrame{
-	private JPanel container = new JPanel();
     private JButton b1 =new JButton("ENREGISTRER");
     
     //Champs de saisie
 
-    private JTextField nomPers = new JTextField("Votre Nome"); // Valeur par défaut
+    private JTextField nomPers = new JTextField("Votre Nom"); // Valeur par défaut
     private JLabel labelnomPers = new JLabel("Nom:"); // texte avant le champ
     private JTextField preNomPers = new JTextField("Votre Prenom"); // Valeur par défaut
     private JLabel labelpreNomPers = new JLabel("Prénom:"); // texte avant le champ
@@ -36,26 +34,62 @@ public class SaisiePersFenetre extends JFrame{
 	  
 	    b1.addActionListener(new BoutonListener());
 	    
-	    // a supprimer
-	    container.setBackground(Color.white);
-	    container.setLayout(new BorderLayout());
 	    // div boutons
 	    JPanel top = new JPanel();
 	    Font police = new Font("Arial", Font.BOLD, 14);
 	    nomPers.setPreferredSize(new Dimension(150, 30));
+	    nomPers.addMouseListener(new MouseListener(){
+	        public void mouseReleased(MouseEvent e) {}         
+	        public void mousePressed(MouseEvent e) {}          
+	        public void mouseExited(MouseEvent e) {}           
+	        public void mouseEntered(MouseEvent e) {}          
+	    	public void mouseClicked(MouseEvent e){
+	    		JTextField nomPers = ((JTextField)e.getSource());
+	    		nomPers.setText("");
+	    		nomPers.getFont().deriveFont(Font.PLAIN);
+	    		nomPers.setForeground(Color.black);
+	    		nomPers.removeMouseListener(this);
+	    	}
+	    });
 	    top.add(labelnomPers);
 	    top.add(nomPers);
 	    preNomPers.setPreferredSize(new Dimension(150, 30));
+	    preNomPers.addMouseListener(new MouseListener(){
+	        public void mouseReleased(MouseEvent e) {}         
+	        public void mousePressed(MouseEvent e) {}          
+	        public void mouseExited(MouseEvent e) {}           
+	        public void mouseEntered(MouseEvent e) {}          
+	    	public void mouseClicked(MouseEvent e){
+	    		JTextField preNomPers = ((JTextField)e.getSource());
+	    		preNomPers.setText("");
+	    		preNomPers.getFont().deriveFont(Font.PLAIN);
+	    		preNomPers.setForeground(Color.black);
+	    		preNomPers.removeMouseListener(this);
+	    	}
+	    });
 	    top.add(labelpreNomPers);
 	    top.add(preNomPers);
 	    mailPers.setPreferredSize(new Dimension(150, 30));
+	    mailPers.addMouseListener(new MouseListener(){
+	        public void mouseReleased(MouseEvent e) {}         
+	        public void mousePressed(MouseEvent e) {}          
+	        public void mouseExited(MouseEvent e) {}           
+	        public void mouseEntered(MouseEvent e) {}          
+	    	public void mouseClicked(MouseEvent e){
+	    		JTextField mailPers = ((JTextField)e.getSource());
+	    		mailPers.setText("");
+	    		mailPers.getFont().deriveFont(Font.PLAIN);
+	    		mailPers.setForeground(Color.black);
+	    		mailPers.removeMouseListener(this);
+	    	}
+	    });
 	    top.add(labelmailPers);
 	    top.add(mailPers);
 	    top.add(b1);	    
 	    
 	    this.setContentPane(top);
 	    
-	    this.setVisible(true);
+	    //this.setVisible(true);
 	}
 	
 	class BoutonListener implements ActionListener{
