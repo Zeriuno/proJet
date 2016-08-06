@@ -9,7 +9,7 @@ public class Evenement {
 	Bdmanager robot=new Bdmanager();
 
 	//attributs
-	String textEven ;
+	String textEven ; // c'est le lieu, mais nous avons la flemme de changer le nom de la variable
 	String nomEven  ;
 	int idEven   ;
 
