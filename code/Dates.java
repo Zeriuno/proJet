@@ -21,9 +21,10 @@ public class Dates {
 	 * Contient:
 	 * 			* Un constructeur (qui appelle remplirSemaine)
 	 * 			* La méthode void private remplirSemaine
-	 * 			* Les méthodes void pour réculer et avancer de semaine (font appel à remplirSemaine)
+	 * 			* Les méthodes void pour réculer (semaineAvant) et avancer (semaineApres) de semaine (font appel à remplirSemaine)
 	 * 			* Les méthodes String pour obtenir la date du Lundi (borneBasse) et du Dimanche (borneHaute)
 	 * 				en format YYYY-MM-DD
+	 * 			* La méthode void print qui imprime tous les jours de la semaine au format "14 juillet 2016", utile pour debug
 	 * 			* Divers et variés développés au fur et à mésure et qui, au fait, ne sont pas utiles.
 	 * 
 	 */
@@ -36,7 +37,20 @@ public class Dates {
     public static void main(String[] a)
 	  {
 	    Dates yo = new Dates();
-	    System.out.println(yo.anneeJeudi);
+	    yo.print();
+	    yo.semaineAvant();
+	    yo.print();
+	    yo.semaineApres();
+	    yo.print();
+	    yo.semaineAvant();
+	    yo.semaineAvant();
+	    yo.semaineAvant();
+	    yo.semaineAvant();
+	    yo.semaineAvant();
+	    yo.semaineAvant();
+	    yo.print();
+	    yo.semaineApres();
+	    yo.print();
 	  }
 
 	public Dates()
@@ -51,12 +65,11 @@ public class Dates {
 	  }
 //	    System.out.println(calendar.get(Calendar.DATE) + "/" + (calendar.get(Calendar.MONTH)+1)); //Imprimer jour et mois courants
 	  
-	  public void semainePro()
+	  public void semaineApres()
 	  /*
 	   * À appeller quand on avance d'une semaine
 	   */
 	  {
-		  calendar.setTime(maintenant)           ;
 		  calendar.set(Calendar.DAY_OF_WEEK, 2)  ;
 		  calendar.add(Calendar.DAY_OF_MONTH, 7) ;
 		  this.remplirSemaine()                  ;
