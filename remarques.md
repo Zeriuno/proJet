@@ -5,3 +5,4 @@
 2. Taille des fenêtres de saisie et affichage fixes
 3. Pas plusieurs personnes invitées
 4. Pas plusieurs évènements en même temps
+5. Uniquement des heures entières (il faudrait doubler la grille pour permettre les demi-heures)
