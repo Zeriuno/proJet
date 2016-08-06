@@ -21,20 +21,21 @@ public class Evenement {
     public Evenement( String nomEven ) {
 		this.nomEven = nomEven;
 	}
-    public Evenement(String nomEven, String textEven, String debut, String fin ,int dureeEven){
+
+    public Evenement(String nomEven, String textEven, String debut, String fin){
 		this.textEven = textEven;
 		this.nomEven=nomEven;
 		this.debutEven=debut;
 		this.finEven =fin;
 		this.dureeEven=dureeEven;
 		}
-    
-    
+
+
 	public Evenement(String nomEven, String textEven, String debut, String fin ) throws ParseException {
 		this.textEven = textEven    ;
 		this.nomEven=nomEven        ;
-		
-		
+
+
 		// sql will manager id
 		//to do that : insert a blank line and get id
 		this.idEven=Bdmanager.geneId();
