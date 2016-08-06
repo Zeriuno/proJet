@@ -46,7 +46,7 @@ public class Dates {
 	 * qui renseigne les autres variables de l'objet.
 	 */
 	  {
-		  maintenant = new Date() ; //La date est initialisée à maintenant, car au lancement du programme on a besoin de ça.
+		  maintenant = new Date() ; //Date initialisée à maintenant
 		  this.remplirSemaine()   ;
 	  }
 //	    System.out.println(calendar.get(Calendar.DATE) + "/" + (calendar.get(Calendar.MONTH)+1)); //Imprimer jour et mois courants
