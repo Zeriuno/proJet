@@ -39,7 +39,7 @@ public class VoirEvenFenetre extends JFrame{
 	public VoirEvenFenetre(Evenement even) {
 		this.setTitle("Affichage Evenement");
 	    this.setSize(300, 300);
-	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	    this.setLocationRelativeTo(null);
 	  	    
 	    this.setResizable(false);
@@ -50,12 +50,20 @@ public class VoirEvenFenetre extends JFrame{
 	    JPanel boutton=new JPanel();
 	    div.setLayout(new GridLayout(7,1));
 	    
-	    JButton ok=new JButton("OK");
-		ok.addActionListener(new ButtonListener());
+		// permet de fermer la fenêtre lorsque l'on clic sur le bouton "ENREGISTRER"
+	    b1.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent e) {
+				if(e.getSource()==b1){
+					setVisible(false);	
+					dispose();
+				}
+			}
+		});
+	    
 		JPanel buttonPane = new JPanel();
-		buttonPane.add(ok);
+		buttonPane.add(b1);
 		
-	    div.add(new JLabel("Titre evenement : " + nomEven));
+	    div.add(new JLabel("Titre evenement : " + even.nomEven));
 	    div.add(new JLabel("Lieu : " + even.textEven));
 	    //div.add(new JLabel("Invite : " + even.));
 	    div.add(new JLabel("Heure de debut : " + even.debutEven));
@@ -67,18 +75,5 @@ public class VoirEvenFenetre extends JFrame{
 	    this.getContentPane().add(buttonPane,BorderLayout.SOUTH );
 	    	    
 	    this.setVisible(true);
-	}
-	
-	// on ï¿½coute le bouton pour rï¿½cupï¿½rer les donnï¿½es saisies dans les champs de la fenï¿½tre
-	/*class BoutonListener implements ActionListener{
-		public void actionPerformed(ActionEvent e){
-			System.out.println("TEXT : nomEven " + nomEven.getText());
-			System.out.println("TEXT : lieu " + lieu.getText());
-			System.out.println("TEXT : invite " + invite.getText());
-			System.out.println("TEXT : dateEven " + dateEven.getText());
-			System.out.println("TEXT : heureDeb " + heureDeb.getText());
-			System.out.println("TEXT : heureFin " + heureFin.getText());
-		}
-	}*/
-    
+	}    
 }
