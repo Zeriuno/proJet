@@ -33,7 +33,7 @@ public class CalendrierFenetre extends JFrame{
 	
 	Dates go;
 	private ArrayList<Evenement> evenList;
-	private JButton boutonG=new JButton("< Précedant");
+	private JButton boutonG=new JButton("< Prï¿½cedant");
     private JButton boutonD=new JButton("Suivant >");
     private JButton boutonAjoutPers=new JButton("+Personne");
     private JButton boutonAjoutEven=new JButton("+Evenement");
@@ -64,7 +64,7 @@ public class CalendrierFenetre extends JFrame{
 
 	private void build(){
 		setTitle("MIMO Calendrier");
-		setSize(1200, 920);
+		setSize(1000, 620);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 		setResizable(true);
@@ -213,8 +213,26 @@ public class CalendrierFenetre extends JFrame{
 	  	boutons.add(boutonD);
 	    boutonAjoutEven.addActionListener(new BoutonListenerAjoutEven());
 	    boutonAjoutPers.addActionListener(new BoutonListenerAjoutPers());
-	    boutonG.addActionListener(new BoutonListenerG()); 
-	    boutonD.addActionListener(new BoutonListenerD()); 
+	    boutonG.addActionListener(new BoutonListenerG());
+	    // permet de fermer la fenêtre lorsque l'on clic sur le bouton "PRECEDENT"
+	    boutonG.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent e) {
+				if(e.getSource()==boutonG){
+					setVisible(false);	
+					dispose();
+				}
+			}
+		});
+	    boutonD.addActionListener(new BoutonListenerD());
+	    // permet de fermer la fenêtre lorsque l'on clic sur le bouton "SUIVANT"
+	    boutonD.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent e) {
+				if(e.getSource()==boutonD){
+					setVisible(false);	
+					dispose();
+				}
+			}
+		});
 	    
 		
 		
@@ -384,6 +402,7 @@ public class CalendrierFenetre extends JFrame{
     			evenList.add(even);
     			// System.out.println("Ajout d'un Ã©vÃ¨nement"); //debug
  			}
+    		 evenementsSQL.close();
     	}
  		catch (Exception e)
  		{
@@ -391,8 +410,10 @@ public class CalendrierFenetre extends JFrame{
  		}
     	 finally {
  			try {
- 			// Etape 6 : libérer ressources de la mémoire.
+ 			// Etape 6 : libï¿½rer ressources de la mï¿½moire.
+ 				pstmnt.close()     ;
  				connexionbd.close();
+ 				
  			} catch (SQLException e) {
  				e.printStackTrace();
  			}

@@ -108,7 +108,6 @@ public class SaisiePersFenetre extends JFrame{
 			System.out.println("TEXT : preNomPers " + preNomPers.getText());
 			System.out.println("TEXT : mailPers " + mailPers.getText());
 			Personne P=new Personne(nomPers.getText(),preNomPers.getText(),mailPers.getText());
-			System.exit(0);
 		}
 	}
 }
