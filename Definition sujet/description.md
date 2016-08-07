@@ -37,16 +37,19 @@ La base de données stocke
 * les personnes
 * les évènements
 
+Une table de relation garde trace des personnes invitées à des évènements.
+
 ### Fonctionnement de l'interface graphique
 
 #### Les éléments de l'interface:
 
 * Affichage des évènements
 * Un bouton pour créer un nouvel évènement
+* Un bouton pour créer une nouvelle personne
+* Deux boutons pour changer de semaine (`Précédente` et `Suivante`)
 
 #### Fonctionnement de l'interface:
 
 Evènement:
 
-* Un double clic sur l'évènement ouvre une fenêtre qui en montre les détails.
-  * Un bouton permet de supprimer l'évènement
+* Un clic sur l'évènement ouvre une fenêtre qui en montre les détails.
