@@ -190,7 +190,7 @@ public class SaisieEvenFenetre extends JFrame{
 				System.out.println("fenetre ajout pers");
 				}
 				else {
-				System.out.println("email à ajouter");
+				System.out.println("email  ajouté");
 				event.ajoutIvitation(email);
 				}
 			
