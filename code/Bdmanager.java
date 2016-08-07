@@ -23,7 +23,7 @@ public class Bdmanager {
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
  *  <<<<<<<<<<  Evenement  >>>>>>>>>>
     <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
-   //generateur du clé 
+   //generateur de la clÃ© 
 	public static int geneId( ){
 
 		String url = "jdbc:mysql://localhost/java";
