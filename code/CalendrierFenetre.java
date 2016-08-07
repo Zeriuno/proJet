@@ -64,7 +64,7 @@ public class CalendrierFenetre extends JFrame{
 
 	private void build(){
 		setTitle("MIMO Calendrier");
-		setSize(1000, 620);
+		setSize(1000, 680);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 		setResizable(true);
