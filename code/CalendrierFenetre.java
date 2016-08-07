@@ -213,8 +213,26 @@ public class CalendrierFenetre extends JFrame{
 	  	boutons.add(boutonD);
 	    boutonAjoutEven.addActionListener(new BoutonListenerAjoutEven());
 	    boutonAjoutPers.addActionListener(new BoutonListenerAjoutPers());
-	    boutonG.addActionListener(new BoutonListenerG()); 
-	    boutonD.addActionListener(new BoutonListenerD()); 
+	    boutonG.addActionListener(new BoutonListenerG());
+	    // permet de fermer la fenêtre lorsque l'on clic sur le bouton "PRECEDENT"
+	    boutonG.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent e) {
+				if(e.getSource()==boutonG){
+					setVisible(false);	
+					dispose();
+				}
+			}
+		});
+	    boutonD.addActionListener(new BoutonListenerD());
+	    // permet de fermer la fenêtre lorsque l'on clic sur le bouton "SUIVANT"
+	    boutonD.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent e) {
+				if(e.getSource()==boutonD){
+					setVisible(false);	
+					dispose();
+				}
+			}
+		});
 	    
 		
 		
