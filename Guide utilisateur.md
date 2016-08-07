@@ -1,7 +1,6 @@
 # Agenda, guide utilisateur
 
 **Groupe C**
-Équipe projet:
 
 * Imane Nedjima Dahmani
 * Li Deng
@@ -66,7 +65,7 @@ Evènement:
 
 1. Un clic sur le texte de remplissage le fait disparaître. Il indique le format à respecter pour la saisie des champs des heures et des dates: l'heure 8:00 est à saisir `08:00`, et le 1/1/2016 `01/01/2016`, faute de quoi le programme ne pourra pas traiter correctement les données fournies.
 2. Le programme ne gère pas les évènements en dehors de la plage horaire 7-21h.
-3. Le programme ne contrôle pas si la date et l'heure saisies sont correctes (l'heure 54:98 ou la date 98/66/007).
+3. Le programme ne contrôle pas si la date et l'heure saisies sont correctes (l'heure 54:98 ou la date 98/66/0007).
 
 ## Saisie personne
 
