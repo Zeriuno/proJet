@@ -410,8 +410,6 @@ public class CalendrierFenetre extends JFrame{
  		}
     	 finally {
  			try {
- 			// Etape 6 : lib�rer ressources de la m�moire.
- 				pstmnt.close()     ;
  				connexionbd.close();
  				
  			} catch (SQLException e) {
