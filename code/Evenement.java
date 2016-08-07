@@ -28,6 +28,15 @@ public class Evenement {
 		this.dureeEven=dureeEven;
 	    this.jourDebut=jourDebut;	
     }
+    
+    public Evenement(String nomEven, String textEven, String debut, String fin, String jourDebut){
+		this.textEven = textEven;
+		this.nomEven=nomEven;
+		this.debutEven=debut;
+		this.finEven =fin;
+		this.dureeEven=dureeEven;
+	    this.jourDebut=jourDebut;	
+    }
 
 
 	public Evenement(String nomEven, String textEven, String debut, String fin ) throws ParseException {
