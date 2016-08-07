@@ -349,7 +349,7 @@ public class CalendrierFenetre extends JFrame{
     	 Connection connexionbd = BDConnect.getConnect() ;
     	 try
     	 {
-    		 String request = "SELECT `nomEven`, `textEven`, DATE_FORMAT(`debutEven`, 'd/%m/%Y %H:%i'),  DATE_FORMAT(`finEven`, '%d/%m/%Y %H:%i'), DATE_FORMAT(`debutEven`, '%W') from evenement WHERE debutEven >= ? AND finEven <= ?";
+    		 String request = "SELECT `nomEven`, `textEven`, DATE_FORMAT(`debutEven`, '%d/%m/%Y %H:%i'),  DATE_FORMAT(`finEven`, '%d/%m/%Y %H:%i'), DATE_FORMAT(`debutEven`, '%W'), DATE_FORMAT(`debutEven`, '%Y-%m-%dT%T'), DATE_FORMAT(`FinEven`, '%Y-%m-%dT%T') from evenement WHERE debutEven >= ? AND finEven <= ?";
     		 pstmnt = connexionbd.prepareStatement(request);
     		 pstmnt.setString(1, Lundi)    ;
     		 pstmnt.setString(2, Dimanche) ;
