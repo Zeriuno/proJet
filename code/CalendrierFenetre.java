@@ -356,26 +356,21 @@ public class CalendrierFenetre extends JFrame{
     	 Connection connexionbd = BDConnect.getConnect() ;
     	 try
     	 {
-    		 String request = "SELECT `nomEven`, `textEven`, DATE_FORMAT(`debutEven`, '%e/%c/%Y %H:%i'),  DATE_FORMAT(`finEven`, '%e/%c/%Y %H:%i'), DATE_FORMAT(`debutEven`, '%W') from evenement WHERE debutEven >= ? AND finEven <= ?";
+    		 String request = "SELECT `nomEven`, `textEven`, DATE_FORMAT(`debutEven`, '%d/%m/%Y %H:%i'),  DATE_FORMAT(`finEven`, '%d/%m/%Y %H:%i'), DATE_FORMAT(`debutEven`, '%W'), DATE_FORMAT(`debutEven`, '%Y-%m-%dT%T'), DATE_FORMAT(`FinEven`, '%Y-%m-%dT%T') from evenement WHERE debutEven >= ? AND finEven <= ?";
     		 pstmnt = connexionbd.prepareStatement(request);
     		 pstmnt.setString(1, Lundi)    ;
     		 pstmnt.setString(2, Dimanche) ;
     		 ResultSet evenementsSQL = pstmnt.executeQuery();
+<<<<<<< HEAD
     		 //System.out.println("Requete SQL execut�"); // debug
     		 
     		 while(evenementsSQL.next())
  			{
-    			 Evenement even= new Evenement(evenementsSQL.getString(1),evenementsSQL.getString(2), evenementsSQL.getString(3),evenementsSQL.getString(4), evenementsSQL.getString(5));
-					 String date1 = evenementsSQL.getString(3);
-					 String date3 =  date1.replace(' ', 'T');
-					 String date5 = date3.replace('/', '-');
-					 String date2 = evenementsSQL.getString(4);
-					 String date4 = date2.replace(' ', 'T');
-					 String date6 = date4.replace('/', '-');
-					 //even.dureeEven = (double) (Duration.between(Instant.parse(date5 + ":00.000Z"), Instant.parse(date6 + ":00.000Z")).getSeconds());
-					 
-					 System.out.println("sql:"+even.debutEven+" "+even.finEven+even.dureeEven); // debug
-    			 evenList.add(even);
+    			Evenement even= new Evenement(evenementsSQL.getString(1),evenementsSQL.getString(2), evenementsSQL.getString(3),evenementsSQL.getString(4), evenementsSQL.getString(5));
+				String date1 = evenementsSQL.getString(6);
+				String date2 = evenementsSQL.getString(7);
+				even.dureeEven = (double) Duration.between(Instant.parse(date1 + ".000Z"), Instant.parse(date2 + ".000Z")).getSeconds()/3600;
+    			evenList.add(even);
     			// System.out.println("Ajout d'un évènement"); //debug
  			}
     	}
