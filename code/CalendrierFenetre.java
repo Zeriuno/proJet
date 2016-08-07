@@ -239,15 +239,14 @@ public class CalendrierFenetre extends JFrame{
          for(Evenement even: evenList){
         
 	                  double  height=(even.dureeEven)*2;
-	                  //double height=2;
         	          String jour=even.jourDebut;
 	                  System.out.println(jour);
 	                  String debut=even.debutEven;
 	                  
-	                  String sH=debut.substring(12,13) ;
+	                  String sH=debut.substring(11,13) ;
 	                  //System.out.println("sh:"+sH);//debug
 	                  System.out.println("fight1:"+sH);
-	                  int pH=(Integer.valueOf(sH)-5);
+	                  int pH=(Integer.valueOf(sH)*2-12);
 		
 	                  JButton evenlol=new JButton("<html>"+even.nomEven+ "<br/>"+even.debutEven+"<html>");
 	                  evenlol.setPreferredSize(new Dimension(100,90)); 
