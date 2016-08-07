@@ -261,10 +261,13 @@ public class CalendrierFenetre extends JFrame{
         	          String jour=even.jourDebut;
 	                  System.out.println(jour);
 	                  String debut=even.debutEven;
+	                  System.out.println(debut);
 	                  
 	                  String sH=debut.substring(11,13) ;
-	           
+	                  String sM=debut.substring(14,16) ;
+	                  System.out.println(sM);
 	                  int pH=(Integer.valueOf(sH)*2-12);
+	                  int pS=(Integer.valueOf(sM)/30);
 		
 	                  JButton evenlol=new JButton("<html>"+even.nomEven+ "<br/>"+even.debutEven+"<html>");
 	                  evenlol.setPreferredSize(new Dimension(100,90)); 
@@ -272,7 +275,7 @@ public class CalendrierFenetre extends JFrame{
 	                  GridBagConstraints gb = new GridBagConstraints();
 	    
 	                  gb.gridx=0;
-	                  gb.gridy=pH;
+	                  gb.gridy=pH+pS;
 	                  System.out.println("gridy:"+ pH);//debug
 	    
 	                  gb.gridwidth = GridBagConstraints.REMAINDER;
@@ -411,7 +414,6 @@ public class CalendrierFenetre extends JFrame{
     	 finally {
  			try {
  			// Etape 6 : lib�rer ressources de la m�moire.
- 				pstmnt.close()     ;
  				connexionbd.close();
  				
  			} catch (SQLException e) {
