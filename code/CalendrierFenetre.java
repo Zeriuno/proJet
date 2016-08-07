@@ -33,7 +33,7 @@ public class CalendrierFenetre extends JFrame{
 	
 	Dates go;
 	private ArrayList<Evenement> evenList;
-	private JButton boutonG=new JButton("< Précedant");
+	private JButton boutonG=new JButton("< Prï¿½cedant");
     private JButton boutonD=new JButton("Suivant >");
     private JButton boutonAjoutPers=new JButton("+Personne");
     private JButton boutonAjoutEven=new JButton("+Evenement");
@@ -402,6 +402,7 @@ public class CalendrierFenetre extends JFrame{
     			evenList.add(even);
     			// System.out.println("Ajout d'un Ã©vÃ¨nement"); //debug
  			}
+    		 evenementsSQL.close();
     	}
  		catch (Exception e)
  		{
@@ -409,8 +410,10 @@ public class CalendrierFenetre extends JFrame{
  		}
     	 finally {
  			try {
- 			// Etape 6 : libérer ressources de la mémoire.
+ 			// Etape 6 : libï¿½rer ressources de la mï¿½moire.
+ 				pstmnt.close()     ;
  				connexionbd.close();
+ 				
  			} catch (SQLException e) {
  				e.printStackTrace();
  			}

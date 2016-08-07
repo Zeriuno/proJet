@@ -37,7 +37,8 @@ public class Personne {
 				pstmnt.setString(1, nomPers);
 				pstmnt.setString(2, prenomPers);
 				pstmnt.setString(3, emailPers);
-				pstmnt.executeQuery();
+				pstmnt.executeUpdate();
+				pstmnt.close();
 			}
 			catch (Exception e)
 			{
