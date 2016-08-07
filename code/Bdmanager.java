@@ -579,7 +579,7 @@ public static void extraInvitation(int idEven) {
 		}
 	}
   }
-//supprission
+//suppression
 
 		public static void supInvitation(int idEven){
 
