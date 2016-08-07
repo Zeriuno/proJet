@@ -361,7 +361,6 @@ public class CalendrierFenetre extends JFrame{
     		 pstmnt.setString(1, Lundi)    ;
     		 pstmnt.setString(2, Dimanche) ;
     		 ResultSet evenementsSQL = pstmnt.executeQuery();
-<<<<<<< HEAD
     		 //System.out.println("Requete SQL executé"); // debug
     		 
     		 while(evenementsSQL.next())
