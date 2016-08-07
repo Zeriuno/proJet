@@ -356,7 +356,13 @@ public class CalendrierFenetre extends JFrame{
     		 
     		 while(evenementsSQL.next())
  			{
-    			 Evenement even= new Evenement(evenementsSQL.getString(1),evenementsSQL.getString(2), evenementsSQL.getString(3),evenementsSQL.getString(4), evenementsSQL.getString(5));	 
+    			 Evenement even= new Evenement(evenementsSQL.getString(1),evenementsSQL.getString(2), evenementsSQL.getString(3),evenementsSQL.getString(4), evenementsSQL.getString(5));
+					 String date1 = evenementsSQL.getString(3);
+					 String date3 =  date1.replace(' ', 'T');
+					 String date2 = evenementsSQL.getString(4);
+					 String date4 = date2.replace(' ', 'T');
+					 Period.between(LocalDate.of(2011, Month.JULY, 28), LocalDate.of(2014, Month.MARCH, 18));
+					 even.dureeEven = Duration.between(Instant.parse(date3 + ":00.000Z"), Instant.parse(date4 + ":00.000Z")).getSeconds()/3600;
     			 evenList.add(even);
     			 System.out.println("Ajout d'un évènement"); //debug
  			}
