@@ -1,5 +1,3 @@
-import java.lang.reflect.Array;
-import java.sql.Date;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,7 +12,7 @@ public class Evenement {
 	int idEven       ;
 	String debutEven ; // format jj/MM/AAAA hh:mm
 	String finEven   ; // format jj/MM/AAAA hh:mm
-	int jourDebut    ; // jour de la semaine: Lundi → 2 ... Dimanche → 8
+	String jourDebut    ; // jour de la semaine: Lundi → 2 ... Dimanche → 8
     double dureeEven  ; // Un évènement qui dure 1h30 = 1.5; 1h45 = 1.75
 
 	//constructeur
@@ -22,13 +20,14 @@ public class Evenement {
 		this.nomEven = nomEven;
 	}
 
-    public Evenement(String nomEven, String textEven, String debut, String fin,double dureeEven,int jourDebut){
+    public Evenement(String nomEven, String textEven, String debut, String fin,double dureeEven,String jourDebut){
 		this.textEven = textEven;
 		this.nomEven=nomEven;
 		this.debutEven=debut;
 		this.finEven =fin;
 		this.dureeEven=dureeEven;
-		}
+	    this.jourDebut=jourDebut;	
+    }
 
 
 	public Evenement(String nomEven, String textEven, String debut, String fin ) throws ParseException {
