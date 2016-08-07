@@ -2,7 +2,12 @@
 
 ## Installation
 
-Le programme nécessite de Java 8 pour fonctionner (à cause de l'utilisation de `java.time.Duration` et `java.time.Instant`).
+Le programme nécessite de:
+
+* Java 8 (à cause de l'utilisation de `java.time.Duration` et `java.time.Instant`)
+* JDBC (intéraction avec la base de données)
+* présence d'une base de données de type MYSQL (cf BDD.sql)
+
 
 ## Saisie évènement
 
