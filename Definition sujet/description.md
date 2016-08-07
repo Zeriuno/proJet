@@ -16,7 +16,6 @@ L'application permet de créer, modifier et afficher un agenda.
 ### Caractéristiques
 
 * Possibilité d'ajouter un évènement
-* Possibilité de modifier un évènement
 * Composition d'un évènement
    * nom
    * lieu
@@ -29,7 +28,7 @@ L'application permet de créer, modifier et afficher un agenda.
 	* nom
 	* prénom
 	* mail
- * Avant de fermer la session le programme montre une liste des personnes à prévenir. Les personnes à prévenir sont celles présentes dans des évènements créés ou bien modifiés.
+ * Avant de fermer la session le programme montre une liste des personnes à prévenir. Les personnes à prévenir sont celles présentes dans des évènements créés ou bien modifiés. [les prérequis pour cette fonctionnalité sont implémentés (structure de la bdd) mais elle n'est pas complète]
 
 ### Base de données
 
@@ -50,4 +49,4 @@ La base de données stocke
 Evènement:
 
 * Un double clic sur l'évènement ouvre une fenêtre qui en montre les détails.
-  * Un bouton permet de passer en mode *Modification*, un bouton permet de supprimer l'évènement
+  * Un bouton permet de supprimer l'évènement
