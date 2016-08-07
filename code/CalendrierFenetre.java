@@ -234,23 +234,23 @@ public class CalendrierFenetre extends JFrame{
         evenList.add(even0);
         evenList.add(even1);
         evenList.add(even2);*/
+		
 	    evenList=recupSemaine();
-     
          for(Evenement even: evenList){
-        
+        	 		
+ 
 	                  double  height=(even.dureeEven)*2;
         	          String jour=even.jourDebut;
 	                  System.out.println(jour);
 	                  String debut=even.debutEven;
 	                  
 	                  String sH=debut.substring(11,13) ;
-	                  //System.out.println("sh:"+sH);//debug
-	                  System.out.println("fight1:"+sH);
+	           
 	                  int pH=(Integer.valueOf(sH)*2-12);
 		
 	                  JButton evenlol=new JButton("<html>"+even.nomEven+ "<br/>"+even.debutEven+"<html>");
 	                  evenlol.setPreferredSize(new Dimension(100,90)); 
-	    
+	                  evenlol.addActionListener(new BoutonEvenListener(even));
 	                  GridBagConstraints gb = new GridBagConstraints();
 	    
 	                  gb.gridx=0;
@@ -345,6 +345,19 @@ public class CalendrierFenetre extends JFrame{
 	}
 
 }
+     class BoutonEvenListener implements ActionListener{
+ 		private Evenement even;
+
+		public BoutonEvenListener(Evenement even) {
+ 			this.even=even;
+ 			
+		}
+
+		public void actionPerformed(ActionEvent e){
+			VoirEvenFenetre fenetre1 = new VoirEvenFenetre(even);
+		    fenetre1.setVisible(true);
+ 		}
+ 	}
      public ArrayList<Evenement> recupSemaine()
      {
     	 ArrayList<Evenement> evenList = new ArrayList<Evenement>();
