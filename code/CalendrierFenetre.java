@@ -30,7 +30,7 @@ import javax.swing.JLabel;
 public class CalendrierFenetre extends JFrame{
 	
 	Dates go;
-	private ArrayList evenList;
+	private ArrayList<Evenement> evenList;
 	private JButton boutonG=new JButton("< Précedant");
     private JButton boutonD=new JButton("Suivant >");
     private JButton boutonAjoutPers=new JButton("+Personne");
@@ -52,7 +52,7 @@ public class CalendrierFenetre extends JFrame{
 	    this.go = go;
 	    build();
 }
-	public CalendrierFenetre(Dates go,ArrayList evenList){
+	public CalendrierFenetre(Dates go,ArrayList<Evenement> evenList){
 
 	    super();
 	    this.go = go;
@@ -179,13 +179,14 @@ public class CalendrierFenetre extends JFrame{
 	  
 	    //II.ajouter evenement 
 	    
-	    Evenement even1= new Evenement("old skool","yaya","02/08/2016 13:45","02/08/2016 14:45",5,"Monday");
+	    /*Evenement even1= new Evenement("old skool","yaya","02/08/2016 13:45","02/08/2016 14:45",5,"Monday");
 	    Evenement even2= new Evenement("old skool","yaya","03/08/2016 11:45","03/08/2016 16:45",2,"Friday");
 	    Evenement even0=new Evenement("java party","give me a five","02/08/2016 12:45","02/08/2016 14:45",2,"Sunday");
 	  	ArrayList<Evenement> evenList= new ArrayList<Evenement>();
         evenList.add(even0);
         evenList.add(even1);
-        evenList.add(even2);
+        evenList.add(even2);*/
+	    evenList=recupSemaine();
      
          for(Evenement even: evenList){
         
@@ -193,7 +194,7 @@ public class CalendrierFenetre extends JFrame{
 	                  String jour=even.jourDebut;
 	                  System.out.println(jour);
 	                  String debut=even.debutEven;
-	                  String sH=debut.substring(11,13) ;
+	                  String sH=debut.substring(12,13) ;
 	                  System.out.println(sH);
 	                  int pH=Integer.valueOf(sH)-5;
 		
@@ -340,16 +341,18 @@ public class CalendrierFenetre extends JFrame{
      {
     	 ArrayList<Evenement> evenList = new ArrayList<Evenement>();
     	 String Lundi = go.borneBasse() +" 00:00:00"      ;
+    	 System.out.println(Lundi);
     	 String Dimanche = go.borneHaute() + " 23:59:59"  ;
     	 PreparedStatement pstmnt ;
     	 Connection connexionbd = BDConnect.getConnect() ;
     	 try
     	 {
-    		 String request = "SELECT `nomEven`, `textEven`, DATE_FORMAT(`debutEven`, '%e/%c/%Y %H:%i'),  DATE_FORMAT(`finEven`, '%e/%c/%Y %H:%i'), DATE_FORMAT(`debutEven`, '%W')) from evenement WHERE debutEven >= ? AND finEven <= ?";
+    		 String request = "SELECT `nomEven`, `textEven`, DATE_FORMAT(`debutEven`, '%e/%c/%Y %H:%i'),  DATE_FORMAT(`finEven`, '%e/%c/%Y %H:%i'), DATE_FORMAT(`debutEven`, '%W') from evenement WHERE debutEven >= ? AND finEven <= ?";
     		 pstmnt = connexionbd.prepareStatement(request);
     		 pstmnt.setString(1, Lundi)    ;
     		 pstmnt.setString(2, Dimanche) ;
     		 ResultSet evenementsSQL = pstmnt.executeQuery();
+    		 System.out.println("Requete SQL executé");
     		 
     		 while(evenementsSQL.next())
  			{
@@ -360,7 +363,7 @@ public class CalendrierFenetre extends JFrame{
     	}
  		catch (Exception e)
  		{
- 			System.out.println("Exception SQL");
+ 			e.printStackTrace();
  		}
     	 
     	 return evenList ;

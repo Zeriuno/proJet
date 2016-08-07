@@ -1,4 +1,5 @@
 import java.text.ParseException;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 public class testGUI {
@@ -24,8 +25,20 @@ public class testGUI {
 
 	   //CalendrierGUI fenetre = new CalendrierGUI();
 	   //Fenetre fenetre = new Fenetre();
+		
+		
 		Dates temps = new Dates();
-	   CalendrierFenetre fenetre = new CalendrierFenetre(temps);
+		ArrayList<Evenement> RDV = new ArrayList<Evenement>();
+		//Evenement even1= new Evenement("old skool","yaya","02/08/2016 13:45","02/08/2016 14:45");
+		//Evenement even2= new Evenement("old skool","yaya","03/08/2016 11:45","03/08/2016 16:45");
+		//ArrayList evenList= new ArrayList();
+		// evenlist =  Bdmanager.recupSemaine(temps)  // Dans une refactorisation du code il sera dans la classe Dates
+		//evenList.add(even1);
+		//evenList.add(even2);
+		
+		
+		// 
+	   CalendrierFenetre fenetre = new CalendrierFenetre(temps,RDV);
 	   //SaisieEvenFenetre fenetre1 = new SaisieEvenFenetre();
 	   //SaisiePersFenetre fenetre2 = new SaisiePersFenetre();
 	  fenetre.setVisible(true);
