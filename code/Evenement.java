@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Evenement {
 
-	Bdmanager robot=new Bdmanager(); // fait pour paresse, on peut plut�t le mettre en param�tre dans les fonctions qui le n�cessitent
+	Bdmanager robot=new Bdmanager(); // fait pour paresse, on peut plutôt le mettre en paramètre dans les fonctions qui le nécessitent
 
 	//attributs
 	String textEven  ; // c'est le lieu, mais nous avons la flemme de changer le nom de la variable
@@ -12,7 +12,7 @@ public class Evenement {
 	int idEven       ;
 	String debutEven ; // format jj/MM/AAAA hh:mm
 	String finEven   ; // format jj/MM/AAAA hh:mm
-	String jourDebut    ; // jour de la semaine: Lundi → 2 ... Dimanche → 8
+	String jourDebut    ; // jour de la semaine en anglais, utilisé pour placer opportunément l'évènement dans la fenêtre du calendrier
     double dureeEven  ; // Un évènement qui dure 1h30 = 1.5; 1h45 = 1.75
 
 	//constructeurs
@@ -45,7 +45,7 @@ public class Evenement {
 		this.nomEven=nomEven        ;
 
 
-		// sql will manager id
+		// sql will manage id
 		//to do that : insert a blank line and get id
 		this.idEven=Bdmanager.geneId();
 		this.debutEven = Bdmanager.convertDatetime(debut);
@@ -56,14 +56,14 @@ public class Evenement {
 	}
 
 	
-	//methode
+	//méthodes
 	
 	//ajouter invitation
 	public void ajoutIvitation(String mailPers){
 		
 		Bdmanager.ajoutInvitation(mailPers, idEven);	
 	}
-	// selecte personne 
+	// select personne 
 	public ArrayList<String> selectPers(String mailsPers){
 		
 		ArrayList<String> list = new ArrayList<String>();
