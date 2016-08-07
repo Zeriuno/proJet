@@ -54,8 +54,16 @@ public class SaisieEvenFenetre extends JFrame{
 	    //boutonlistener permet d'indiquer le bouton d'action 
 	    //actionlistener permet de utiliser la fonction actionPerformed 
 	    //actionPerformed permet aux bouton d'appeller l'action    
-	    b1.addActionListener(new BoutonListener()); 
-	    //on indique au bouton qu'il est écouté
+	    b1.addActionListener(new BoutonListener()); // on indique au bouton qu'il est écouté
+	    // permet de fermer la fenêtre lorsque l'on clic sur le bouton "ENREGISTRER"
+	    b1.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent e) {
+				if(e.getSource()==b1){
+					setVisible(false);	
+					dispose();
+				}
+			}
+		});
 
 	    //II Div pour les boutons et les panels
 	    JPanel top = new JPanel();
@@ -200,11 +208,6 @@ public class SaisieEvenFenetre extends JFrame{
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-			 
-			
-			//fermer la fenetre
-			System.exit(0);
 		}
 	}
-    
 }

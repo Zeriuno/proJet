@@ -32,7 +32,17 @@ public class SaisiePersFenetre extends JFrame{
 	    this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	    this.setLocationRelativeTo(null);
 	  
-	    b1.addActionListener(new BoutonListener());
+	    b1.addActionListener(new BoutonListener()); //on indique au bouton qu'il est écouté
+	    
+	 // permet de fermer la fenêtre lorsque l'on clic sur le bouton "ENREGISTRER"
+	    b1.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent e) {
+				if(e.getSource()==b1){
+					setVisible(false);	
+					dispose();
+				}
+			}
+		});
 	    
 	    // div boutons
 	    JPanel top = new JPanel();
