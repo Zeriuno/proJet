@@ -166,7 +166,7 @@ public class Bdmanager {
 		}
 	  }
 
-    // convertir le string "debutDate" to bonne format à inserer sql
+    // convertir le string "debutDate" to bonne format ï¿½ inserer sql
 	public static String convertDatetime(String temps) throws ParseException {
 		
 		DateFormat format=new SimpleDateFormat("dd/MM/yyyy kk:mm");
