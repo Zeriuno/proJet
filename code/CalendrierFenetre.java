@@ -176,55 +176,6 @@ public class CalendrierFenetre extends JFrame{
 	    semaine.add(vendredi);
 	    semaine.add(samedi);
 	    semaine.add(dimanche);
-	  
-	    //II.ajouter evenement 
-	    
-	    /*Evenement even1= new Evenement("old skool","yaya","02/08/2016 13:45","02/08/2016 14:45",5,"Monday");
-	    Evenement even2= new Evenement("old skool","yaya","03/08/2016 11:45","03/08/2016 16:45",2,"Friday");
-	    Evenement even0=new Evenement("java party","give me a five","02/08/2016 12:45","02/08/2016 14:45",2,"Sunday");
-	  	ArrayList<Evenement> evenList= new ArrayList<Evenement>();
-        evenList.add(even0);
-        evenList.add(even1);
-        evenList.add(even2);*/
-	    evenList=recupSemaine();
-     
-         for(Evenement even: evenList){
-        
-	                  double  height=even.dureeEven;
-	                  String jour=even.jourDebut;
-	                  System.out.println(jour);
-	                  String debut=even.debutEven;
-	                  String sH=debut.substring(12,13) ;
-	                  System.out.println(sH);
-	                  int pH=Integer.valueOf(sH)-5;
-		
-	                  JButton evenlol=new JButton("<html>Give me a Five<br/>Put heure here<html>");
-	                  evenlol.setPreferredSize(new Dimension(100,90)); 
-	    
-	                  GridBagConstraints gb = new GridBagConstraints();
-	    
-	                  gb.gridx=0;
-	                  gb.gridy=pH;
-	    
-	                  gb.gridwidth = GridBagConstraints.REMAINDER;
-	                  gb.gridheight=(int) height;
-	                  gb.weighty=1;
-	                  gb.fill=GridBagConstraints.BOTH;
-	    
-	                  switch(jour)
-                         {
-                           case "Monday" : lundi.add(evenlol,gb); break;
-                           case "Tuesday" : mardi.add(evenlol,gb); break;
-                           case "Wednesday" : mercredi.add(evenlol,gb); break;
-                           case "Thursday" : jeudi.add(evenlol,gb); break;
-                           case "Friday" : vendredi.add(evenlol,gb); break;
-                           case "Saturday" : samedi.add(evenlol,gb); break;
-                           case "Sunday" : dimanche.add(evenlol,gb); break;
-                           default :  {FDialogue fenetre = new FDialogue();
-          	               fenetre.setVisible(true);}
-                           }
-         }
-
 	    
 	    //III.panel gauche
 	  	JPanel panelG = new JPanel();
@@ -270,7 +221,57 @@ public class CalendrierFenetre extends JFrame{
 		div.add(panelG, BorderLayout.WEST);
 		div.add(boutons, BorderLayout.SOUTH);
  
-		return div;
+		
+	  
+	    //II.ajouter evenement 
+	    
+	    /*Evenement even1= new Evenement("old skool","yaya","02/08/2016 13:45","02/08/2016 14:45",5,"Monday");
+	    Evenement even2= new Evenement("old skool","yaya","03/08/2016 11:45","03/08/2016 16:45",2,"Friday");
+	    Evenement even0=new Evenement("java party","give me a five","02/08/2016 12:45","02/08/2016 14:45",2,"Sunday");
+	  	ArrayList<Evenement> evenList= new ArrayList<Evenement>();
+        evenList.add(even0);
+        evenList.add(even1);
+        evenList.add(even2);*/
+	    evenList=recupSemaine();
+     
+         for(Evenement even: evenList){
+        
+	                  double  height=(even.dureeEven)*2;
+	                  String jour=even.jourDebut;
+	                  System.out.println(jour);
+	                  String debut=even.debutEven;
+	                  String sH=debut.substring(12,13) ;
+	                  System.out.println(sH);
+	                  int pH=(Integer.valueOf(sH)-5)*2;
+		
+	                  JButton evenlol=new JButton("<html>"+even.nomEven+ "<br/>"+even.debutEven+"<html>");
+	                  evenlol.setPreferredSize(new Dimension(100,90)); 
+	    
+	                  GridBagConstraints gb = new GridBagConstraints();
+	    
+	                  gb.gridx=0;
+	                  gb.gridy=pH;
+	    
+	                  gb.gridwidth = GridBagConstraints.REMAINDER;
+	                  gb.gridheight=(int) height;
+	                  gb.weighty=1;
+	                  gb.fill=GridBagConstraints.BOTH;
+	    
+	                  switch(jour)
+                         {
+                           case "Monday" : lundi.add(evenlol,gb); break;
+                           case "Tuesday" : mardi.add(evenlol,gb); break;
+                           case "Wednesday" : mercredi.add(evenlol,gb); break;
+                           case "Thursday" : jeudi.add(evenlol,gb); break;
+                           case "Friday" : vendredi.add(evenlol,gb); break;
+                           case "Saturday" : samedi.add(evenlol,gb); break;
+                           case "Sunday" : dimanche.add(evenlol,gb); break;
+                           default :  {FDialogue fenetre = new FDialogue();
+          	               fenetre.setVisible(true);}
+                           }
+         }
+	    
+         return div;
 	}
 	
 	
@@ -323,7 +324,7 @@ public class CalendrierFenetre extends JFrame{
 		public void actionPerformed(ActionEvent e){
 			 System.out.println("recharge la semaine precident");
 			 go.semaineAvant();
-			 CalendrierFenetre fenetre1 = new CalendrierFenetre(go);
+			 CalendrierFenetre fenetre1 = new CalendrierFenetre(go,evenList);
              fenetre1.setVisible(true);
  
 		}
@@ -332,7 +333,7 @@ public class CalendrierFenetre extends JFrame{
 	public void actionPerformed(ActionEvent e){
 		 System.out.println("recharge la semaine prochaine");
 		 go.semaineApres();
-		 CalendrierFenetre fenetre1 = new CalendrierFenetre(go);
+		 CalendrierFenetre fenetre1 = new CalendrierFenetre(go,evenList);
          fenetre1.setVisible(true);
 	}
 
