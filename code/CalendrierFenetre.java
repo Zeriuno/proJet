@@ -213,8 +213,26 @@ public class CalendrierFenetre extends JFrame{
 	  	boutons.add(boutonD);
 	    boutonAjoutEven.addActionListener(new BoutonListenerAjoutEven());
 	    boutonAjoutPers.addActionListener(new BoutonListenerAjoutPers());
-	    boutonG.addActionListener(new BoutonListenerG()); 
-	    boutonD.addActionListener(new BoutonListenerD()); 
+	    boutonG.addActionListener(new BoutonListenerG());
+	    // permet de fermer la fenêtre lorsque l'on clic sur le bouton "PRECEDENT"
+	    boutonG.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent e) {
+				if(e.getSource()==boutonG){
+					setVisible(false);	
+					dispose();
+				}
+			}
+		});
+	    boutonD.addActionListener(new BoutonListenerD());
+	    // permet de fermer la fenêtre lorsque l'on clic sur le bouton "SUIVANT"
+	    boutonD.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent e) {
+				if(e.getSource()==boutonD){
+					setVisible(false);	
+					dispose();
+				}
+			}
+		});
 	    
 		
 		
@@ -234,23 +252,23 @@ public class CalendrierFenetre extends JFrame{
         evenList.add(even0);
         evenList.add(even1);
         evenList.add(even2);*/
+		
 	    evenList=recupSemaine();
-     
          for(Evenement even: evenList){
-        
+        	 		
+ 
 	                  double  height=(even.dureeEven)*2;
         	          String jour=even.jourDebut;
 	                  System.out.println(jour);
 	                  String debut=even.debutEven;
 	                  
 	                  String sH=debut.substring(11,13) ;
-	                  //System.out.println("sh:"+sH);//debug
-	                  System.out.println("fight1:"+sH);
+	           
 	                  int pH=(Integer.valueOf(sH)*2-12);
 		
 	                  JButton evenlol=new JButton("<html>"+even.nomEven+ "<br/>"+even.debutEven+"<html>");
 	                  evenlol.setPreferredSize(new Dimension(100,90)); 
-	    
+	                  evenlol.addActionListener(new BoutonEvenListener(even));
 	                  GridBagConstraints gb = new GridBagConstraints();
 	    
 	                  gb.gridx=0;
@@ -345,6 +363,19 @@ public class CalendrierFenetre extends JFrame{
 	}
 
 }
+     class BoutonEvenListener implements ActionListener{
+ 		private Evenement even;
+
+		public BoutonEvenListener(Evenement even) {
+ 			this.even=even;
+ 			
+		}
+
+		public void actionPerformed(ActionEvent e){
+			VoirEvenFenetre fenetre1 = new VoirEvenFenetre(even);
+		    fenetre1.setVisible(true);
+ 		}
+ 	}
      public ArrayList<Evenement> recupSemaine()
      {
     	 ArrayList<Evenement> evenList = new ArrayList<Evenement>();
