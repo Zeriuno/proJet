@@ -31,44 +31,6 @@ public class FEvenVoir extends JFrame{
 	public String heureDeb = "10:30";
 	public String heureFin = "15:30";
 	
-<<<<<<< HEAD
-    
-    
-    
-    
-    private JTextField nomEven = new JTextField("RDV"); // Valeur par dÃ©faut
-    private JLabel labelnomEven = new JLabel("Titre Ã©vÃ©nement:"); // texte avant le champ
-    private JTextField invite = new JTextField("moi@domai.ne"); // Valeur par dÃ©faut
-    private JLabel labelinvite = new JLabel("InvitÃ©:"); // texte avant le champ
-    private JTextField dateEven = new JTextField("JJ/MM/AAAA"); // Valeur par dÃ©faut
-    private JLabel labeldateEven = new JLabel("Date:"); // texte avant le champ
-    private JTextField heureDeb = new JTextField("HH:MM"); // Valeur par dÃ©faut
-    private JLabel labelheureDeb = new JLabel("Heure de dÃ©but:"); // texte avant le champ
-    private JTextField heureFin = new JTextField("HH:MM"); // Valeur par dÃ©faut
-    private JLabel labelheureFin = new JLabel("Heure de fin:"); // texte avant le champ
-     
-    
-	public FEvenVoir(FEvenVoirPetit petit)
-	/*
-	 * Constructeur de la fenÃªtre.
-	 * Il reÃ§oit en paramÃ¨tre un affichage de la fenÃªtre en petit, grÃ¢ce auquel il rÃ©cupÃ¨re les informations nÃ©cessaires.
-	 * 
-	 */
-	{
-		this.nomEven = petit.nomEven ;
-		this.setTitle(this.nomEven)  ;
-		/*
-		 * lieuEven
-		 * heureDebut
-		 * heureFin
-		 * invitePrenom
-		 * inviteNom
-		 * inviteMel
-		 * 
-		 */
-		
-	    this.setSize(1400, 300);
-=======
 	//private JPanel pan=new JPanel();
 	//private JPanel container = new JPanel();
 	private JButton b1 =new JButton("OK");
@@ -76,25 +38,24 @@ public class FEvenVoir extends JFrame{
 	public FEvenVoir() {
 		this.setTitle("Affichage Evenement");
 	    this.setSize(300, 300);
->>>>>>> f6250d558f88f2dc1992f5837105ef83af9534f4
 	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    this.setLocationRelativeTo(null);
 	  	    
 	    this.setBackground(Color.white);
 	    this.setLayout(new GridLayout(7, 1));
 	    Font police = new Font("Arial", Font.BOLD, 14);
-	    this.getContentPane().add(new JLabel("Titre événement : " + nomEven));
+	    this.getContentPane().add(new JLabel("Titre evenement : " + nomEven));
 	    this.getContentPane().add(new JLabel("Lieu : " + lieu));
-	    this.getContentPane().add(new JLabel("Invité : " + invite));
+	    this.getContentPane().add(new JLabel("Invite : " + invite));
 	    this.getContentPane().add(new JLabel("Date : " + dateEven));
-	    this.getContentPane().add(new JLabel("Heure de début : " + heureDeb));
+	    this.getContentPane().add(new JLabel("Heure de debut : " + heureDeb));
 	    this.getContentPane().add(new JLabel("Heure de fin : " + heureFin));
 	    this.getContentPane().add(b1);
 	    	    
 	    this.setVisible(true);
 	}
 	
-	// on écoute le bouton pour récupérer les données saisies dans les champs de la fenêtre
+	// on ï¿½coute le bouton pour rï¿½cupï¿½rer les donnï¿½es saisies dans les champs de la fenï¿½tre
 	/*class BoutonListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
 			System.out.println("TEXT : nomEven " + nomEven.getText());
