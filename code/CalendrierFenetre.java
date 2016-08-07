@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -53,7 +54,7 @@ public class CalendrierFenetre extends JFrame{
 	    this.go = go;
 	    build();
 }
-	public CalendrierFenetre(Dates go,ArrayList<Evenement> evenList){
+	public CalendrierFenetre(Dates go, ArrayList<Evenement> evenList){
 
 	    super();
 	    this.go = go;
@@ -238,12 +239,15 @@ public class CalendrierFenetre extends JFrame{
          for(Evenement even: evenList){
         
 	                  double  height=(even.dureeEven)*2;
-	                  String jour=even.jourDebut;
+	                  //double height=2;
+        	          String jour=even.jourDebut;
 	                  System.out.println(jour);
 	                  String debut=even.debutEven;
+	                  
 	                  String sH=debut.substring(12,13) ;
-	                  System.out.println(sH);
-	                  int pH=(Integer.valueOf(sH)-5)*2;
+	                  //System.out.println("sh:"+sH);//debug
+	                  System.out.println("fight1:"+sH);
+	                  int pH=(Integer.valueOf(sH)-5);
 		
 	                  JButton evenlol=new JButton("<html>"+even.nomEven+ "<br/>"+even.debutEven+"<html>");
 	                  evenlol.setPreferredSize(new Dimension(100,90)); 
@@ -252,9 +256,11 @@ public class CalendrierFenetre extends JFrame{
 	    
 	                  gb.gridx=0;
 	                  gb.gridy=pH;
+	                  System.out.println("gridy:"+ pH);//debug
 	    
 	                  gb.gridwidth = GridBagConstraints.REMAINDER;
 	                  gb.gridheight=(int) height;
+	                  System.out.println("height:"+ height);//debug
 	                  gb.weighty=1;
 	                  gb.fill=GridBagConstraints.BOTH;
 	    
@@ -334,6 +340,7 @@ public class CalendrierFenetre extends JFrame{
 	public void actionPerformed(ActionEvent e){
 		 System.out.println("recharge la semaine prochaine");
 		 go.semaineApres();
+		 recupSemaine();
 		 CalendrierFenetre fenetre1 = new CalendrierFenetre(go,evenList);
          fenetre1.setVisible(true);
 	}
@@ -354,21 +361,29 @@ public class CalendrierFenetre extends JFrame{
     		 pstmnt.setString(1, Lundi)    ;
     		 pstmnt.setString(2, Dimanche) ;
     		 ResultSet evenementsSQL = pstmnt.executeQuery();
-    		 System.out.println("Requete SQL executï¿½");
-
+    		 //System.out.println("Requete SQL executé"); // debug
+    		 
     		 while(evenementsSQL.next())
  			{
-    			 Evenement even= new Evenement(evenementsSQL.getString(1),evenementsSQL.getString(2), evenementsSQL.getString(3),evenementsSQL.getString(4), evenementsSQL.getString(5));
-					 String date1 = evenementsSQL.getString(6);
-					 String date2 = evenementsSQL.getString(7);
-					 even.dureeEven = (double) Duration.between(Instant.parse(date1 + ".000Z"), Instant.parse(date2 + ".000Z")).getSeconds()/3600;
-    			 evenList.add(even);
-    			 System.out.println("Ajout d'un Ã©vÃ¨nement"); //debug
+    			Evenement even= new Evenement(evenementsSQL.getString(1),evenementsSQL.getString(2), evenementsSQL.getString(3),evenementsSQL.getString(4), evenementsSQL.getString(5));
+				String date1 = evenementsSQL.getString(6);
+				String date2 = evenementsSQL.getString(7);
+				even.dureeEven = (double) Duration.between(Instant.parse(date1 + ".000Z"), Instant.parse(date2 + ".000Z")).getSeconds()/3600;
+    			evenList.add(even);
+    			// System.out.println("Ajout d'un Ã©vÃ¨nement"); //debug
  			}
     	}
  		catch (Exception e)
  		{
  			e.printStackTrace();
+ 		}
+    	 finally {
+ 			try {
+ 			// Etape 6 : libérer ressources de la mémoire.
+ 				connexionbd.close();
+ 			} catch (SQLException e) {
+ 				e.printStackTrace();
+ 			}
  		}
     	 
     	 return evenList ;
