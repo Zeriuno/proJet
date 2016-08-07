@@ -35,7 +35,7 @@ Le programme nécessite de:
 	* nom
 	* prénom
 	* mail
-  * Avant de fermer la session le programme montre une liste des personnes à prévenir. Les personnes à prévenir sont celles présentes dans des évènements créés ou bien modifiés (les prérequis pour cette fonctionnalité sont implémentés (structure de la base de données et récupération des invités) mais elle n'est pas complète).
+  * **fonctionnalité non complète** Avant de fermer la session le programme montre une liste des personnes à prévenir. Les personnes à prévenir sont celles présentes dans des évènements créés ou bien modifiés (les prérequis pour cette fonctionnalité sont implémentés -structure de la base de données et récupération des invités- mais elle n'est pas complète).
 
 ### Base de données
 
@@ -66,6 +66,7 @@ Evènement:
 1. Un clic sur le texte de remplissage le fait disparaître. Il indique le format à respecter pour la saisie des champs des heures et des dates: l'heure 8:00 est à saisir `08:00`, et le 1/1/2016 `01/01/2016`, faute de quoi le programme ne pourra pas traiter correctement les données fournies.
 2. Le programme ne gère pas les évènements en dehors de la plage horaire 7-21h.
 3. Le programme ne contrôle pas si la date et l'heure saisies sont correctes (l'heure 54:98 ou la date 98/66/0007).
+4. Les évènements doivent commencer à l'heure ou bien à la demi-heure.
 
 ## Saisie personne
 
@@ -76,3 +77,4 @@ L'adresse mél de la personne est la clef primaire de la table personne. Il est 
 1. Pas de bouton pour modifier ou supprimer les évènements.
 2. Impossible d'inviter plusieurs personnes (des préconisations à ce but sont notées dans le code en commentaire).
 3. Impossible d'ajouter plusieurs évènements dans la même plage horaire.
+4. L'alignement de la grille du calendrier est imparfait.
