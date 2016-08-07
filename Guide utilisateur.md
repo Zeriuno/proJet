@@ -77,3 +77,4 @@ L'adresse mél de la personne est la clef primaire de la table personne. Il est 
 1. Pas de bouton pour modifier ou supprimer les évènements.
 2. Impossible d'inviter plusieurs personnes (des préconisations à ce but sont notées dans le code en commentaire).
 3. Impossible d'ajouter plusieurs évènements dans la même plage horaire.
+4. L'alignement de la grille du calendrier est imparfait.
