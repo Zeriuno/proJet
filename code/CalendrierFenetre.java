@@ -106,54 +106,19 @@ public class CalendrierFenetre extends JFrame{
 		lundi.setPreferredSize(new Dimension(100, 1020));
 	    lundi.setBackground(Color.yellow);
 	    lundi.setLayout(new GridBagLayout());
+	   
 	    
         String dateLundi=String.valueOf(go.semaine[0]);
+        jourMaker(dateLundi,"Lundi",lundi);
 	    
-	  	String curlundi[]={dateLundi,"Lundi","07h00","08h00","09h00 ","10h00","11h00","12h00","13h00","14h00","15h00","16h00","17h00","18h00","19h00","20h00","21h00"};
-	  	
-	  	JLabel[] lundiLs=new JLabel[curlundi.length];
-	  	for(int i=0;i<curlundi.length;i++)
-	  	{
-	  	  lundiLs[i]=new JLabel(curlundi[i],SwingConstants.CENTER);
-	  	  gbc.gridx=0;
-	      gbc.gridy=i;
-	      gbc.gridheight=1;
-	      gbc.gridwidth=1;
-	      gbc.weightx=1;
-	      gbc.weighty=1;
-	      gbc.fill=GridBagConstraints.BOTH;
-	  	  lundiLs[i].setPreferredSize(new Dimension(100,60));
-	  	  lundiLs[i].setBorder(border);
-	  	  lundi.add(lundiLs[i],gbc);
-	  	}
-	    
-	    
-	    
+  
 	    //II.2 panel pour mardi
 	    JPanel mardi = new JPanel();
 		mardi.setPreferredSize(new Dimension(100, 1020));
 	    mardi.setBackground(Color.white);
 	    mardi.setLayout(new GridBagLayout());
-	    
 	    String dateMardi=String.valueOf(go.semaine[1]);
-	    
-	  	String curmardi[]={dateMardi,"Mardi","07h00","08h00","09h00 ","10h00","11h00","12h00","13h00","14h00","15h00","16h00","17h00","18h00","19h00","20h00","21h00"};
-	  	
-	  	JLabel[] mardiLs=new JLabel[curmardi.length];
-	  	for(int i=0;i<curmardi.length;i++)
-	  	{
-	  	  mardiLs[i]=new JLabel(curmardi[i],SwingConstants.CENTER);
-	  	  gbc.gridx=0;
-	      gbc.gridy=i;
-	      gbc.gridheight=1;
-	      gbc.gridwidth=1;
-	      gbc.weightx=1;
-	      gbc.weighty=1;
-	      gbc.fill=GridBagConstraints.BOTH;
-	  	  mardiLs[i].setPreferredSize(new Dimension(100,60));
-	  	  mardiLs[i].setBorder(border);
-	  	  mardi.add(mardiLs[i],gbc);
-	  	}
+	    jourMaker(dateMardi,"Mardi",mardi);
 	    
 	    
 	    //II.3 panel pour mercredi
@@ -161,49 +126,18 @@ public class CalendrierFenetre extends JFrame{
 		mercredi.setPreferredSize(new Dimension(100, 1020));
 	    mercredi.setBackground(Color.yellow);
 	    mercredi.setLayout(new GridBagLayout());
-	    
 	    String dateMercredi=String.valueOf(go.semaine[2]);
+	    jourMaker(dateMercredi,"Mecredi",mercredi);
 	    
-	    String curmercredi[]={dateMercredi,"Mercredi","07h00","08h00","09h00 ","10h00","11h00","12h00","13h00","14h00","15h00","16h00","17h00","18h00","19h00","20h00","21h00"};
-	  	JLabel[] mercrediLs=new JLabel[curmercredi.length];
-	  	for(int i=0;i<curmercredi.length;i++)
-	  	{
-	  	  mercrediLs[i]=new JLabel(curmercredi[i],SwingConstants.CENTER);
-	  	  gbc.gridx=0;
-	      gbc.gridy=i;
-	      gbc.gridheight=1;
-	      gbc.gridwidth=1;
-	      gbc.weightx=1;
-	      gbc.weighty=1;
-	      gbc.fill=GridBagConstraints.BOTH;
-	  	  mercrediLs[i].setPreferredSize(new Dimension(100,60));
-	  	  mercrediLs[i].setBorder(border);
-	  	  mercredi.add(mercrediLs[i],gbc);
-	  	}
+	
 	    
 	  	//II.4 panel jeudi
 	    JPanel jeudi = new JPanel();
 		jeudi.setPreferredSize(new Dimension(100, 1020));
 	    jeudi.setBackground(Color.white);
 	    jeudi.setLayout(new GridBagLayout());
-	    
 	    String dateJeudi=String.valueOf(go.semaine[3]);
-	    String curjeudi[]={dateJeudi,"Jeudi","07h00","08h00","09h00 ","10h00","11h00","12h00","13h00","14h00","15h00","16h00","17h00","18h00","19h00","20h00","21h00"};
-	    JLabel[] jeudiLs=new JLabel[curjeudi.length];
-	  	for(int i=0;i<curjeudi.length;i++)
-	  	{
-	  	  jeudiLs[i]=new JLabel(curjeudi[i],SwingConstants.CENTER);
-	  	  gbc.gridx=0;
-	      gbc.gridy=i;
-	      gbc.gridheight=1;
-	      gbc.gridwidth=1;
-	      gbc.weightx=1;
-	      gbc.weighty=1;
-	      gbc.fill=GridBagConstraints.BOTH;
-	  	  jeudiLs[i].setPreferredSize(new Dimension(100,60));
-	  	  jeudiLs[i].setBorder(border);
-	  	  jeudi.add(jeudiLs[i],gbc);
-	  	}
+	    jourMaker(dateJeudi,"Jeudi",jeudi);
 	    
 	  	
 	  	//II. 5 panel vendredi
@@ -211,24 +145,9 @@ public class CalendrierFenetre extends JFrame{
 		vendredi.setPreferredSize(new Dimension(100, 1020));
 	    vendredi.setBackground(Color.yellow);
 	    vendredi.setLayout(new GridBagLayout());
-	    
 	    String dateVendredi=String.valueOf(go.semaine[4]);
-	    String curvendredi[]={dateVendredi,"Vendredi","07h00","08h00","09h00 ","10h00","11h00","12h00","13h00","14h00","15h00","16h00","17h00","18h00","19h00","20h00","21h00"};
-	    JLabel[] vendrediLs=new JLabel[curjeudi.length];
-	  	for(int i=0;i<curvendredi.length;i++)
-	  	{
-	  	  vendrediLs[i]=new JLabel(curvendredi[i],SwingConstants.CENTER);
-	  	  gbc.gridx=0;
-	      gbc.gridy=i;
-	      gbc.gridheight=1;
-	      gbc.gridwidth=1;
-	      gbc.weightx=1;
-	      gbc.weighty=1;
-	      gbc.fill=GridBagConstraints.BOTH;
-	  	  vendrediLs[i].setPreferredSize(new Dimension(100,60));
-	  	  vendrediLs[i].setBorder(border);
-	  	  vendredi.add(vendrediLs[i],gbc);
-	  	}
+	    jourMaker(dateVendredi,"Vendredi",vendredi);
+
 	    
 	    //II.6 panel Samedi
 	    JPanel samedi = new JPanel();
@@ -236,46 +155,15 @@ public class CalendrierFenetre extends JFrame{
 	    samedi.setBackground(Color.white);
 	    samedi.setLayout(new GridBagLayout());
 	    JPanel dimanche = new JPanel();
-	    
 	    String dateSamedi=String.valueOf(go.semaine[5]);
-	    String cursamedi[]={dateSamedi,"Samedi","07h00","08h00","09h00 ","10h00","11h00","12h00","13h00","14h00","15h00","16h00","17h00","18h00","19h00","20h00","21h00"};
-	    JLabel[] samediLs=new JLabel[cursamedi.length];
-	  	for(int i=0;i<cursamedi.length;i++)
-	  	{
-	  	  samediLs[i]=new JLabel(cursamedi[i],SwingConstants.CENTER);
-	  	  gbc.gridx=0;
-	      gbc.gridy=i;
-	      gbc.gridheight=1;
-	      gbc.gridwidth=1;
-	      gbc.weightx=1;
-	      gbc.weighty=1;
-	      gbc.fill=GridBagConstraints.BOTH;
-	  	  samediLs[i].setPreferredSize(new Dimension(100,60));
-	  	  samediLs[i].setBorder(border);
-	  	  samedi.add(samediLs[i],gbc);
-	  	}
+	    jourMaker(dateSamedi,"Samedi",samedi);
+	    
 	    
 		dimanche.setPreferredSize(new Dimension(100, 1020));
 	    dimanche.setBackground(Color.yellow);
 	    dimanche.setLayout(new GridBagLayout());
-	    
 	    String dateDimanche=String.valueOf(go.semaine[6]);
-	    String curdimanche[]={dateDimanche,"Dimanche","07h00","08h00","09h00 ","10h00","11h00","12h00","13h00","14h00","15h00","16h00","17h00","18h00","19h00","20h00","21h00"};
-	    JLabel[] dimancheLs=new JLabel[curdimanche.length];
-	  	for(int i=0;i<curdimanche.length;i++)
-	  	{
-	  	  dimancheLs[i]=new JLabel(curdimanche[i],SwingConstants.CENTER);
-	  	  gbc.gridx=0;
-	      gbc.gridy=i;
-	      gbc.gridheight=1;
-	      gbc.gridwidth=1;
-	      gbc.weightx=1;
-	      gbc.weighty=1;
-	      gbc.fill=GridBagConstraints.BOTH;
-	  	  dimancheLs[i].setPreferredSize(new Dimension(100,60));
-	  	  dimancheLs[i].setBorder(border);
-	  	  dimanche.add(dimancheLs[i],gbc);
-	  	}
+	    jourMaker(dateDimanche,"Dmache",dimanche);
 	    
 	    
 	    semaine.add(lundi);
@@ -340,9 +228,9 @@ public class CalendrierFenetre extends JFrame{
 	  	panelG.setBackground(Color.white);
 	  	panelG.setLayout(new GridLayout());
 	  	GridLayout gg = new GridLayout();
-	    gg.setRows(17);
+	    gg.setRows(32);
 	  	//III.1 horaire
-	  	String cur[]={"","horaire","07h00","08h00","09h00","10h00","11h00","12h00","13h00","14h00","15h00","16h00","17h00","18h00","19h00","20h00","21h00"};
+	  	String cur[]={"","","07h00"," ","08h00"," ","09h00"," ","10h00"," ","11h00"," ","12h00"," ","13h00"," ","14h00"," ","15h00"," ","16h00"," ","17h00"," ","18h00"," ","19h00"," ","20h00"," ","21h00"," "};
 	  	JLabel[] labels=new JLabel[cur.length];
 	  	for(int i=0;i<cur.length;i++)
 	  	{
@@ -383,6 +271,31 @@ public class CalendrierFenetre extends JFrame{
 	
 	
 	
+	private void jourMaker(String date, String jour, JPanel pan) {
+       String curlundi[]={date,jour,"07h00"," ","08h00"," ","09h00"," ","10h00"," ","11h00"," ","12h00"," ","13h00"," ","14h00"," ","15h00"," ","16h00"," ","17h00"," ","18h00"," ","19h00"," ","20h00"," ","21h00"," "};
+	   
+        Border border = LineBorder.createGrayLineBorder();
+        GridBagConstraints gbc = new GridBagConstraints();
+	  	JLabel[] lundiLs=new JLabel[curlundi.length];
+	  	for(int i=0;i<curlundi.length;i++)
+	  	{
+	  	  lundiLs[i]=new JLabel(curlundi[i],SwingConstants.CENTER);
+	  	  gbc.gridx=0;
+	      gbc.gridy=i;
+	      gbc.gridheight=1;
+	      gbc.gridwidth=1;
+	      gbc.weightx=1;
+	      gbc.weighty=1;
+	      gbc.fill=GridBagConstraints.BOTH;
+	  	  lundiLs[i].setPreferredSize(new Dimension(100,60));
+	  	  lundiLs[i].setBorder(border);
+	  	  pan.add(lundiLs[i],gbc);
+	  	}
+		
+	}
+
+
+
 	// Class pour les interactions 
 	class BoutonListenerAjoutEven implements ActionListener{
 		public void actionPerformed(ActionEvent e){
@@ -418,6 +331,7 @@ public class CalendrierFenetre extends JFrame{
 		 CalendrierFenetre fenetre1 = new CalendrierFenetre(go);
          fenetre1.setVisible(true);
 	}
+
 }
      
 }
