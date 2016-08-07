@@ -15,28 +15,29 @@ public class Evenement {
 	String jourDebut    ; // jour de la semaine: Lundi → 2 ... Dimanche → 8
     double dureeEven  ; // Un évènement qui dure 1h30 = 1.5; 1h45 = 1.75
 
-	//constructeur
+	//constructeurs
     public Evenement( String nomEven ) {
 		this.nomEven = nomEven;
 	}
-
-    public Evenement(String nomEven, String textEven, String debut, String fin,double dureeEven,String jourDebut){
-		this.textEven = textEven;
-		this.nomEven=nomEven;
-		this.debutEven=debut;
-		this.finEven =fin;
-		this.dureeEven=dureeEven;
-	    this.jourDebut=jourDebut;	
-    }
     
     public Evenement(String nomEven, String textEven, String debut, String fin, String jourDebut){
-		this.textEven = textEven;
-		this.nomEven=nomEven;
+    	this(nomEven);
+    	this.textEven = textEven;
 		this.debutEven=debut;
 		this.finEven =fin;
-		this.dureeEven=dureeEven;
 	    this.jourDebut=jourDebut;	
     }
+    public Evenement(int idEven, String nomEven, String textEven, String debut, String fin, String jourDebut){
+    	this(nomEven, textEven, debut, fin, jourDebut);
+    	this.idEven = idEven;
+    }
+    
+    public Evenement(String nomEven, String textEven, String debut, String fin,double dureeEven,String jourDebut){
+		this(nomEven, textEven, debut, fin, jourDebut);
+		this.dureeEven=dureeEven;	
+    }
+    
+    
 
 
 	public Evenement(String nomEven, String textEven, String debut, String fin ) throws ParseException {

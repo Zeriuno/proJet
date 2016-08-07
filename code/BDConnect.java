@@ -10,6 +10,14 @@ import java.sql.SQLException      ; // Nécessaire si on a recours à SQLExcepti
 
 public class BDConnect {
 	
+	/*
+	 * Dans un premier temps nous sommes partis en incluant toute transaction avec la base de données dans 
+	 * Bdmanager. Afin de factoriser le code, mieux serait de séparer l'objet connexion (dans une classe comme 
+	 * celle-ci) des transactions (dans les autres classes).
+	 * Ce travail a commencé (avec la requête des évènements de la semaine), mais il n'a pas été achevé. 
+	 * La plupart des méthodes se trouve encore dans Bdmanager 
+	 */
+	
 	private static String database = "java"       ;
 	private static String user = "root"                   ;
 	private static String pass = "" ;

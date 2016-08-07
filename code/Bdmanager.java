@@ -9,12 +9,15 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
-//things to improve
-// 0. REFACTOR
-// 1. in function ajout when text has "'" sql can't eat it → SANITIZE INPUT
-// 2. select personne -> how to return a structure of several persons ?  → return an ArrayList
 
 public class Bdmanager {
+	
+	/*
+	 * 1. Voir le commentaire dans le BDConnect: ce code serait à factoriser.
+	 * 2. Il serait nécessaire de traiter les chaînes de caractères de manière à pouvoir gérer correctement les ' et " dans les requêtes
+	 * 3. Il manque une méthode qui retournerait un ArrayList de personnes: elle est à réaliser sur la base de CalendrierFenetre.recupSemaine()
+	 *
+	 */
 
     
 	public Bdmanager() {
@@ -282,7 +285,8 @@ public class Bdmanager {
 	 *  <<<<<<<<<<  Personne  >>>>>>>>>>
 	    <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 
-	//fonction ajoutPers
+	//fonction ajoutPers rendue obsolète par l'intégration de cette méthode directement dans la classe Personne
+	/*
 		public static void ajoutPers(String nomPers, String prenomPers,String mailPers){
 
 			String url = "jdbc:mysql://localhost/java";
@@ -325,6 +329,8 @@ public class Bdmanager {
 				}
 			}
 		  }
+		  
+	*/
 	//fonction affichage
 		public static void extraPers() {
 
