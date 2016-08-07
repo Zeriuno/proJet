@@ -14,7 +14,7 @@ public class BDConnect {
 	private static String url = "jdbc:mysql://localhost:3306/" + database;
 	private static Connection cnct;
 
-	public static Connection BDConnect()
+	public static Connection getConnect()
 	{
 			try
 			{

@@ -1,6 +1,9 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -333,5 +336,34 @@ public class CalendrierFenetre extends JFrame{
 	}
 
 }
+     public ArrayList<Evenement> recupSemaine()
+     {
+    	 ArrayList<Evenement> evenList = new ArrayList<Evenement>();
+    	 String Lundi = go.borneBasse() +" 00:00:00"      ;
+    	 String Dimanche = go.borneHaute() + " 23:59:59"  ;
+    	 PreparedStatement pstmnt ;
+    	 Connection connexionbd = BDConnect.getConnect() ;
+    	 try
+    	 {
+    		 String request = "SELECT `nomEven`, `textEven`, DATE_FORMAT(`debutEven`, '%e/%c/%Y %H:%i'),  DATE_FORMAT(`finEven`, '%e/%c/%Y %H:%i'), DATE_FORMAT(`debutEven`, '%W')) from evenement WHERE debutEven >= ? AND finEven <= ?";
+    		 pstmnt = connexionbd.prepareStatement(request);
+    		 pstmnt.setString(1, Lundi)    ;
+    		 pstmnt.setString(2, Dimanche) ;
+    		 ResultSet evenementsSQL = pstmnt.executeQuery();
+    		 
+    		 while(evenementsSQL.next())
+ 			{
+    			 Evenement even= new Evenement(evenementsSQL.getString(1),evenementsSQL.getString(2), evenementsSQL.getString(3),evenementsSQL.getString(4), evenementsSQL.getString(5));	 
+    			 evenList.add(even);
+    			 System.out.println("Ajout d'un évènement"); //debug
+ 			}
+    	}
+ 		catch (Exception e)
+ 		{
+ 			System.out.println("Exception SQL");
+ 		}
+    	 
+    	 return evenList ;
+     }
      
 }
