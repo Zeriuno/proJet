@@ -8,6 +8,7 @@ import javax.swing.BoxLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -63,12 +64,16 @@ public class VoirEvenFenetre extends JFrame{
 		JPanel buttonPane = new JPanel();
 		buttonPane.add(b1);
 		
+		String nom=Bdmanager.extraPers(even.idEven);
+		ArrayList<String> pers=Bdmanager.selectPers(even.idEven);
+		
 	    div.add(new JLabel("Titre evenement : " + even.nomEven));
 	    div.add(new JLabel("Lieu : " + even.textEven));
-	    //div.add(new JLabel("Invite : " + even.));
+	    if (nom!=null){div.add(new JLabel("Invite : " + nom));
+	    div.add(new JLabel("mail : " + pers.get(2)));
+	    }
 	    div.add(new JLabel("Heure de debut : " + even.debutEven));
 	    div.add(new JLabel("Heure de fin   : " + even.finEven));
-	     
         div.setBackground(Color.WHITE);
 	    div.setBorder(new EmptyBorder(10, 10, 10, 10));
 	    this.getContentPane().add(div,BorderLayout.CENTER);

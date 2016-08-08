@@ -34,7 +34,7 @@ public class Dates {
 	int[] semaine = new int [7] ;
 	Date maintenant             ;
     Calendar calendar = new GregorianCalendar() ;
-    public static void main(String[] a)
+   /* public static void main(String[] a)
 	  {
 	    Dates yo = new Dates();
 	    yo.print();
@@ -51,7 +51,7 @@ public class Dates {
 	    yo.print();
 	    yo.semaineApres();
 	    yo.print();
-	  }
+	  }*/
 
 	public Dates()
 	/*

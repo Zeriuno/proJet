@@ -12,6 +12,8 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 
+//Cette fenetre pour gerer les exceptions mais on n'a pas utilisé
+
 public class FDialogue extends JFrame{
 	public static void main(String[] args){
 		//JOptionPane.showMessageDialog(null, "Erreur dans la saisie", "Erreur", JOptionPane.ERROR_MESSAGE);

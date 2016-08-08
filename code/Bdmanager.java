@@ -20,6 +20,8 @@ public class Bdmanager {
 	 */
 
     
+	private static String prenom;
+
 	public Bdmanager() {
 		// TODO Auto-generated constructor stub
 	}
@@ -414,13 +416,13 @@ public class Bdmanager {
 				while (rs.next()) {
 					System.out.print(rs.getString("nomPers"));
 					String nom=rs.getString("nomPers");
-					list.add("nom");
+					list.add(nom);
 					System.out.print(rs.getString("prenomPers"));
 					String premon=rs.getString("prenomPers");
-					list.add("prenom");
+					list.add(prenom);
 					System.out.println(rs.getString("mailPers"));
 					String email=rs.getString("mailPers");
-					list.add("email");
+					list.add(email);
                  
 					
 					 
@@ -585,6 +587,118 @@ public static void extraInvitation(int idEven) {
 		}
 	}
   }
+// extraPerson
+
+public static String extraPers(int idEven) {
+
+	// Information d'acc�s � la base de donn�es
+	String url = "jdbc:mysql://localhost/java";
+	String login = "root";
+	String passwd = "";
+	Connection cn =null;
+	Statement st =null;
+	ResultSet rs =null;
+	String nomPers = null;
+
+	try {
+
+		// Etape 1 : Chargement du driver
+		Class.forName("com.mysql.jdbc.Driver");
+
+		// Etape 2 : r�cup�ration de la connexion
+		cn = DriverManager.getConnection(url, login, passwd);
+
+		// Etape 3 : Cr�ation d'un statement
+		st = cn.createStatement();
+
+		String sql = "select * from evenement e inner join invitation i on e.idEven=i.idEven inner join personne p on p.mailPers=i.mailPers where e.idEven="+idEven+"";
+
+		// Etape 4 : ex�cution requ�te
+		rs = st.executeQuery(sql);
+
+		// Si r�cup donn�es alors �tapes 5 (parcours Resultset)
+
+		while (rs.next()) {
+			System.out.print(rs.getString("mailPers"));
+			System.out.print(rs.getString("nomPers"));
+			nomPers=rs.getString("nomPers");
+		}
+	} catch (SQLException e) {
+		e.printStackTrace();
+	} catch (ClassNotFoundException e) {
+		e.printStackTrace();
+	} finally {
+		try {
+		// Etape 6 : lib�rer ressources de la m�moire.
+			cn.close();
+			st.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	return nomPers;
+	
+  }
+
+public static ArrayList selectPers(int idEven) {
+
+	// Information d'acc�s � la base de donn�es
+	String url = "jdbc:mysql://localhost/java";
+	String login = "root";
+	String passwd = "";
+	Connection cn =null;
+	Statement st =null;
+	ResultSet rs =null;
+	ArrayList<String> list = new ArrayList<String>();
+
+	try {
+
+		// Etape 1 : Chargement du driver
+		Class.forName("com.mysql.jdbc.Driver");
+
+		// Etape 2 : r�cup�ration de la connexion
+		cn = DriverManager.getConnection(url, login, passwd);
+
+		// Etape 3 : Cr�ation d'un statement
+		st = cn.createStatement();
+
+		String sql = "select * from evenement e inner join invitation i on e.idEven=i.idEven inner join personne p on p.mailPers=i.mailPers where e.idEven="+idEven+"";;
+
+		// Etape 4 : ex�cution requ�te
+		rs = st.executeQuery(sql);
+
+		// Si r�cup donn�es alors �tapes 5 (parcours Resultset)
+
+		while (rs.next()) {
+			System.out.print(rs.getString("nomPers"));
+			String nom=rs.getString("nomPers");
+			list.add(nom);
+			System.out.print(rs.getString("prenomPers"));
+			String premon=rs.getString("prenomPers");
+			list.add(prenom);
+			System.out.println(rs.getString("mailPers"));
+			String email=rs.getString("mailPers");
+			list.add(email);
+         
+			
+			 
+		}
+	} catch (SQLException e) {
+		e.printStackTrace();
+	} catch (ClassNotFoundException e) {
+		e.printStackTrace();
+	} finally {
+		try {
+		// Etape 6 : lib�rer ressources de la m�moire.
+			cn.close();
+			st.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	//comment return structure ?
+	return list;}
+
 //suppression
 
 		public static void supInvitation(int idEven){
