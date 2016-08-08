@@ -78,3 +78,5 @@ L'adresse mél de la personne est la clef primaire de la table personne. Il est 
 2. Impossible d'inviter plusieurs personnes (des préconisations à ce but sont notées dans le code en commentaire).
 3. Impossible d'ajouter plusieurs évènements dans la même plage horaire.
 4. L'alignement de la grille du calendrier est imparfait.
+5. Un évènement créé dans la semaine affichée ne sera pas montré sans avoir préalablement quitté (`précédent` ou `suivant`) la semaine en cours.
+6. Il est nécessaire de créer une personne avant de pouvoir l'inviter dans un évènement.
