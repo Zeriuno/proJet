@@ -7,6 +7,9 @@
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
+-- USE DATABASE java;
+
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
