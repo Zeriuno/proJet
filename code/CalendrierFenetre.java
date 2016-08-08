@@ -162,15 +162,15 @@ public class CalendrierFenetre extends JFrame{
 	    JPanel dimanche = new JPanel();
 	    String dateSamedi=String.valueOf(go.semaine[5]);
 	    jourMaker(dateSamedi,"Samedi",samedi);
-	    
-	    
+
+
 		dimanche.setPreferredSize(new Dimension(100, 1020));
 	    dimanche.setBackground(Color.yellow);
 	    dimanche.setLayout(new GridBagLayout());
 	    String dateDimanche=String.valueOf(go.semaine[6]);
-	    jourMaker(dateDimanche,"Dmache",dimanche);
-	    
-	    
+	    jourMaker(dateDimanche,"Dimanche",dimanche);
+
+
 	    semaine.add(lundi);
 	    semaine.add(mardi);
 	    semaine.add(mercredi);
