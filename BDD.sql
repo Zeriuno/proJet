@@ -3,11 +3,11 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Dim 07 Août 2016 à 23:43
+-- Généré le :  Lun 08 Août 2016 à 01:48
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
---USE database java;
+-- USE DATABASE java;
 
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `evenement` (
   `debutEven` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `finEven` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`idEven`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=78 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=79 ;
 
 --
 -- Contenu de la table `evenement`
@@ -46,7 +46,8 @@ INSERT INTO `evenement` (`idEven`, `nomEven`, `textEven`, `debutEven`, `finEven`
 (66, 'pot pour JAVA', 'Chez Moi', '2016-08-07 16:00:00', '2016-08-07 16:30:00'),
 (69, 'Retour au boulot', 'Bureau', '2016-08-08 09:00:00', '2016-08-08 17:00:00'),
 (76, 'Encore Java', 'Chez moi', '2016-08-07 19:00:00', '2016-08-07 21:00:00'),
-(77, 'Boire du java', 'Chez moi', '2016-08-01 15:00:00', '2016-08-01 18:30:00');
+(77, 'Boire du java', 'Chez moi', '2016-08-01 15:30:00', '2016-08-01 18:30:00'),
+(78, 'Dodo', 'Sur le Lit', '2016-08-10 14:30:00', '2016-08-10 18:00:00');
 
 -- --------------------------------------------------------
 
@@ -67,7 +68,8 @@ CREATE TABLE IF NOT EXISTS `invitation` (
 
 INSERT INTO `invitation` (`idEven`, `mailPers`, `si_prevenu`) VALUES
 (76, 'patrickrivera@orange.fr', 0),
-(77, 'daniele@pitrolo.it', 0);
+(77, 'daniele@pitrolo.it', 0),
+(78, 'ldeng89@gmail.com', 0);
 
 -- --------------------------------------------------------
 
