@@ -9,7 +9,7 @@
 
 ## Description
 
-L'application permet de créer, modifier et afficher un agenda.
+L'application s'ouvre sur la semaine courante (heure du système) permet de créer, modifier et afficher un agenda.
 
 ## Installation
 
